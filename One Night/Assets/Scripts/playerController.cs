@@ -16,8 +16,19 @@ public class playerController : MonoBehaviour
 	private float currStamina;
 	private bool canRun;
 	public float recoverStam;
-    public bool testDoor;
 
+    public bool testDoor;
+    public string previousRoom;
+    public string currentRoom;
+    public GameObject boatHouseLoc;
+    public GameObject gardenHouseLoc;
+    public GameObject MansionLoc;
+    public GameObject player;
+    public Vector3 playerLoc;
+    private Vector3 outsideLoc;
+    private bool playerDestroyed;
+    private bool firstLoad;
+    public Vector3 firstLoadLoc;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +38,10 @@ public class playerController : MonoBehaviour
 			walkSpeed = speed;
 			canRun = true;
 			currStamina = stamina;
+            playerLoc = transform.position;
+            currentRoom = "Audrey";
+            previousRoom = "Audrey";
+
     }
 
     // Update is called once per frame
@@ -75,35 +90,65 @@ public class playerController : MonoBehaviour
 	{
 
 	}
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "MansionDoor")
-        {
-            SceneManager.LoadScene("AudreyHouse", LoadSceneMode.Single);
-            testDoor = true;
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        switch (collision.gameObject.name){
+            case "MansionDoor":
+                currentRoom = "AudreyHouse";
+                previousRoom = "Audrey";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("AudreyHouse", LoadSceneMode.Single);
+                break;
+
+            case "GreenhouseDoor":
+                currentRoom = "GreenHouse";
+                previousRoom = "Audrey";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("GardenHouse", LoadSceneMode.Single);
+                break;
+
+            case "BoatyardDoor":
+                currentRoom = "BoatHouse";
+                previousRoom = "Audrey";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("BoatHouse", LoadSceneMode.Single);
+                break;
+
+            case "MainDoor": 
+                switch (currentRoom){
+                    case "AudreyHouse":
+                        DontDestroyOnLoad(this.gameObject);
+                        SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
+                        previousRoom = currentRoom;
+                        currentRoom = "Audrey";
+                        outsideLoc = MansionLoc.transform.position;
+                        playerLoc.x = outsideLoc.x;
+                        playerLoc.y = outsideLoc.y - 10;
+                        break;
+
+                    case "GardenHouse":
+                        DontDestroyOnLoad(this.gameObject);
+                        SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
+                        previousRoom = currentRoom;
+                        currentRoom = "Audrey";
+                        outsideLoc = gardenHouseLoc.transform.position;
+                        playerLoc.x = outsideLoc.x;
+                        playerLoc.y = outsideLoc.y - 10;
+                        break;
+
+                    case "BoatyardDoor":                     
+                        DontDestroyOnLoad(this.gameObject);
+                        SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
+                        previousRoom = currentRoom;
+                        currentRoom = "Audrey";
+                        outsideLoc = boatHouseLoc.transform.position;
+                        playerLoc.x = outsideLoc.x;
+                        playerLoc.y = outsideLoc.y - 10;
+                        break;
+                }
+
+                SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
+                break;
         }
-        else if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "GreenhouseDoor")
-        {
-            SceneManager.LoadScene("GardenHouse", LoadSceneMode.Single);
-            testDoor = true;
-
-        }
-        else if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "BoatyardDoor")
-        {
-            SceneManager.LoadScene("BoatHouse", LoadSceneMode.Single);
-            testDoor = true;
-
-        }
-        else if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "MainDoor")
-        {
-            SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
-            testDoor = true;
-
-        }
-
-    }
-
-    private void OnTriggerExit2D(Collider2D collision){
-        testDoor = false;
     }
 }
