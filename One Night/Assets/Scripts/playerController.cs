@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
@@ -15,6 +16,7 @@ public class playerController : MonoBehaviour
 	private float currStamina;
 	private bool canRun;
 	public float recoverStam;
+    public bool testDoor;
 
 
     // Start is called before the first frame update
@@ -67,10 +69,41 @@ public class playerController : MonoBehaviour
 
 			lastPos = transform.position;
 			rb.MovePosition (rb.position + moveVelocity * Time.fixedDeltaTime);
-		}
+        }
 
 	void FixedUpdate()
 	{
 
 	}
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "MansionDoor")
+        {
+            SceneManager.LoadScene("AudreyHouse", LoadSceneMode.Single);
+            testDoor = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "GreenhouseDoor")
+        {
+            SceneManager.LoadScene("GardenHouse", LoadSceneMode.Single);
+            testDoor = true;
+
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "BoatyardDoor")
+        {
+            SceneManager.LoadScene("BoatHouse", LoadSceneMode.Single);
+            testDoor = true;
+
+        }
+        else if (Input.GetKeyDown(KeyCode.E) && collision.gameObject.name == "MainDoor")
+        {
+            SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
+            testDoor = true;
+
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision){
+        testDoor = false;
+    }
 }
