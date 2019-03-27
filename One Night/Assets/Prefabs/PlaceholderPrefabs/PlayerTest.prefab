@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: 21300000, guid: 306156fe97a49964697cbfe87836e302, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -120,6 +120,11 @@ MonoBehaviour:
   stamina: 100
   recoverStam: 20
   testDoor: 0
+  previousRoom: 
+  currentRoom: 
+  player: {fileID: 0}
+  playerLoc: {x: 0, y: 0, z: 0}
+  firstLoadLoc: {x: 0, y: 0, z: 0}
 --- !u!114 &5533178446732551371
 MonoBehaviour:
   m_ObjectHideFlags: 0

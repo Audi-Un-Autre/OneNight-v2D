@@ -20,9 +20,6 @@ public class playerController : MonoBehaviour
     public bool testDoor;
     public string previousRoom;
     public string currentRoom;
-    public GameObject boatHouseLoc;
-    public GameObject gardenHouseLoc;
-    public GameObject MansionLoc;
     public GameObject player;
     public Vector3 playerLoc;
     private Vector3 outsideLoc;
@@ -39,9 +36,6 @@ public class playerController : MonoBehaviour
 			canRun = true;
 			currStamina = stamina;
             playerLoc = transform.position;
-            currentRoom = "Audrey";
-            previousRoom = "Audrey";
-
     }
 
     // Update is called once per frame
@@ -93,6 +87,7 @@ public class playerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision){
         switch (collision.gameObject.name){
+            /////////////////// Outside Doors /////////////////////
             case "MansionDoor":
                 currentRoom = "AudreyHouse";
                 previousRoom = "Audrey";
@@ -114,41 +109,28 @@ public class playerController : MonoBehaviour
                 SceneManager.LoadScene("BoatHouse", LoadSceneMode.Single);
                 break;
 
-            case "MainDoor": 
-                switch (currentRoom){
-                    case "AudreyHouse":
-                        DontDestroyOnLoad(this.gameObject);
-                        SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
-                        previousRoom = currentRoom;
-                        currentRoom = "Audrey";
-                        outsideLoc = MansionLoc.transform.position;
-                        playerLoc.x = outsideLoc.x;
-                        playerLoc.y = outsideLoc.y - 10;
-                        break;
-
-                    case "GardenHouse":
-                        DontDestroyOnLoad(this.gameObject);
-                        SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
-                        previousRoom = currentRoom;
-                        currentRoom = "Audrey";
-                        outsideLoc = gardenHouseLoc.transform.position;
-                        playerLoc.x = outsideLoc.x;
-                        playerLoc.y = outsideLoc.y - 10;
-                        break;
-
-                    case "BoatyardDoor":                     
-                        DontDestroyOnLoad(this.gameObject);
-                        SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
-                        previousRoom = currentRoom;
-                        currentRoom = "Audrey";
-                        outsideLoc = boatHouseLoc.transform.position;
-                        playerLoc.x = outsideLoc.x;
-                        playerLoc.y = outsideLoc.y - 10;
-                        break;
-                }
-
+                /////////////// Inside Doors /////////////////
+            case "MainDoor":
+                currentRoom = "Audrey";
+                previousRoom = "AudreyHouse";
+                DontDestroyOnLoad(this.gameObject);
                 SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
                 break;
+
+            case "GardenDoor":
+                currentRoom = "Audrey";
+                previousRoom = "GardenHouse";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
+                break;
+
+            case "BoatDoor":
+                currentRoom = "Audrey";
+                previousRoom = "BoatHouse";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
+                break;
+
         }
     }
 }

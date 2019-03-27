@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class CamFollow : MonoBehaviour
 {
-    public Transform player;
-    public Camera cam;
+    [SerializeField] GameObject player;
+    [SerializeField] Transform playerLoc;
+    [SerializeField] Camera cam;
 
-    private void Start()
-    {
+    private void Start(){
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerLoc = player.transform;
         cam = GetComponent<Camera>();
         cam.backgroundColor = Color.black;
     }
-    private void FixedUpdate()
-    {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
-
+    private void FixedUpdate(){
+        transform.position = new Vector3(playerLoc.position.x, playerLoc.position.y, transform.position.z);
     }
 }
