@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
@@ -16,6 +17,15 @@ public class playerController : MonoBehaviour
 	private bool canRun;
 	public float recoverStam;
 
+    public bool testDoor;
+    public string previousRoom;
+    public string currentRoom;
+    public GameObject player;
+    public Vector3 playerLoc;
+    private Vector3 outsideLoc;
+    private bool playerDestroyed;
+    private bool firstLoad;
+    public Vector3 firstLoadLoc;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +35,7 @@ public class playerController : MonoBehaviour
 			walkSpeed = speed;
 			canRun = true;
 			currStamina = stamina;
+            playerLoc = transform.position;
     }
 
     // Update is called once per frame
@@ -67,10 +78,59 @@ public class playerController : MonoBehaviour
 
 			lastPos = transform.position;
 			rb.MovePosition (rb.position + moveVelocity * Time.fixedDeltaTime);
-		}
+        }
 
 	void FixedUpdate()
 	{
 
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision){
+        switch (collision.gameObject.name){
+            /////////////////// Outside Doors /////////////////////
+            case "MansionDoor":
+                currentRoom = "AudreyHouse";
+                previousRoom = "Audrey";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("AudreyHouse", LoadSceneMode.Single);
+                break;
+
+            case "GreenhouseDoor":
+                currentRoom = "GreenHouse";
+                previousRoom = "Audrey";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("GardenHouse", LoadSceneMode.Single);
+                break;
+
+            case "BoatyardDoor":
+                currentRoom = "BoatHouse";
+                previousRoom = "Audrey";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("BoatHouse", LoadSceneMode.Single);
+                break;
+
+                /////////////// Inside Doors /////////////////
+            case "MainDoor":
+                currentRoom = "Audrey";
+                previousRoom = "AudreyHouse";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
+                break;
+
+            case "GardenDoor":
+                currentRoom = "Audrey";
+                previousRoom = "GardenHouse";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
+                break;
+
+            case "BoatDoor":
+                currentRoom = "Audrey";
+                previousRoom = "BoatHouse";
+                DontDestroyOnLoad(this.gameObject);
+                SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
+                break;
+
+        }
+    }
 }
