@@ -6,6 +6,15 @@ public class Slot : MonoBehaviour
 {
 	private Inventory inventory;
 	public int i;
+
+	public void ItemEffect()
+	{
+		foreach(Transform child in transform)
+		{
+			child.GetComponent<ItemEffects>().ItemEffect();
+		}
+	}
+
 	public void DropItem()
 	{
 		foreach (Transform child in transform) 
