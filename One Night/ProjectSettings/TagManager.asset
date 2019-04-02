@@ -7,6 +7,8 @@ TagManager:
   - Door
   - BuildingDoor
   - SolidObject
+  - PressurePlate
+  - Item
   layers:
   - Default
   - TransparentFX
