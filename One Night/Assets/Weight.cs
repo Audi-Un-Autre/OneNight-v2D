@@ -9,7 +9,7 @@ public class Weight : MonoBehaviour
     private bool isOnPlate;
     public GameObject MasterPlate;
     private int counter;
-    public GameObject currPlate;
+    public Weight currPlate;
 
     void Start()
     {
@@ -50,12 +50,16 @@ public class Weight : MonoBehaviour
             isOnPlate = true;
             pressurePlate.SetWeight(GetWeight());
             UpdateMasterPlate(pressurePlate);
-            currPlate = collision.gameObject;
+            currPlate = pressurePlate;
         }
         else
         {
             isOnPlate = false;
-            currPlate = null;
+        }
+
+        if(isPlate && collision.gameObject.tag != "Item")
+        {
+            SetWeight(0);
         }
     }
 
@@ -77,7 +81,6 @@ public class Weight : MonoBehaviour
         else
         {
             isOnPlate = false;
-            currPlate = null;
         }
     }
 
@@ -93,14 +96,13 @@ public class Weight : MonoBehaviour
             SetWeight(0);
             UpdateMasterPlate(this);
         }
-        Debug.Log("ASDADS");
     }
 
     void OnDestroy()
     {
         if(!isPlate && isOnPlate)
         {
-            currPlate.GetComponent<Weight>().SubtractItem();
+            currPlate.SubtractItem();
         }
     }
 }
