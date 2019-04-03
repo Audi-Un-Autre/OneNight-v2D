@@ -8,13 +8,23 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public Text name;
     public Text dialogueText;
+    bool dialogueStarted = false;
 
     private void Start(){
         sentences = new Queue<string>();
     }
 
+    private void Update(){
+        if (dialogueStarted){
+            GetComponent<FadeElements>().Fade_In();
+        }
+        if (!dialogueStarted){
+            GetComponent<FadeElements>().Fade_Out();
+        }
+    }
+
     public void StartEvent(Dialogue dialogue){
-        Debug.Log("Speaking: " + dialogue.name);
+        dialogueStarted = true;
         name.text = dialogue.name;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences){
@@ -34,6 +44,6 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void End(){
-        Debug.Log("End of conversation.");
+        dialogueStarted = false;
     }
 }
