@@ -5,16 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MASTER/Audrey.unity
     guid: 9577180d7506ecf4983911cc1d922c0a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MASTER/AudreyHouse.unity
     guid: e22420fb34527764c9dfb48efc86a4bd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MASTER/BoatHouse.unity
     guid: 38099484a3fdaef4d907094d9c0fb8f9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MASTER/GardenHouse.unity
     guid: b0fcf916f8e739941af3698429be0407
+  - enabled: 1
+    path: Assets/Scenes/AudreyScenes/Audrey.unity
+    guid: 77c098e012247d54ca1fc73d9eb42bd6
+  - enabled: 1
+    path: Assets/Scenes/AudreyScenes/AudreyHouse.unity
+    guid: 82fbb1bf47e6d2a4a8766b326602a5f1
+  - enabled: 1
+    path: Assets/Scenes/AudreyScenes/BoatHouse.unity
+    guid: b41517cbc4236004aba3a91c66fbc9d7
+  - enabled: 1
+    path: Assets/Scenes/AudreyScenes/GardenHouse.unity
+    guid: 172404ac9185f384c93c2f28cf7a0402
   m_configObjects: {}

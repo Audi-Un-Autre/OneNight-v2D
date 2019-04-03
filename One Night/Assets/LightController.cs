@@ -49,7 +49,7 @@ public class LightController : MonoBehaviour
 
         lightComp.intensity = batteryLeft/maxLight * intensityModifier;
 
-        Debug.Log("Battery Left: " + batteryLeft);
+        //Debug.Log("Battery Left: " + batteryLeft);
     }
  
 }
