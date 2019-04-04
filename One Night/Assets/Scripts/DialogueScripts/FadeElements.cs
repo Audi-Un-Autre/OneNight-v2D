@@ -18,7 +18,7 @@ public class FadeElements : MonoBehaviour
             UI.alpha -= Time.deltaTime / 100f;
             yield return null;
         }
-        UI.interactable = false;
+        //UI.interactable = false;
         yield return null;
     }
 
@@ -30,7 +30,7 @@ public class FadeElements : MonoBehaviour
             UI.alpha += Time.deltaTime / 5f;
             yield return null;
         }
-        UI.interactable = false;
+        //UI.interactable = false;
         yield return null;
     }
 }

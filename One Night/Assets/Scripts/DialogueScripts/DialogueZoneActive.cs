@@ -8,26 +8,25 @@ public class DialogueZoneActive : MonoBehaviour
     private DialogueManager mgr;
     private bool colliding;
     private GameObject player;
+    private bool requirementMet;
 
     private void Start(){
         dialougeStarted = false;
         colliding = false;
         mgr = FindObjectOfType<DialogueManager>();
+        requirementMet = false;
     }
 
     private void Update(){
         if (colliding && Input.GetKeyDown(KeyCode.E) && !dialougeStarted){
             // initial dialogue & freeze player in place
-            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY; 
-            gameObject.GetComponent<DialogueTrigger>().startDialogue();
+            gameObject.GetComponentInChildren<DialogueTrigger>().startDialogue();
             dialougeStarted = true;
         }
         else if (colliding && Input.GetKeyDown(KeyCode.E) && dialougeStarted){
             // subsuequent dialogues & unfreeze player when done
             if (mgr.DisplayNext() == true){
-                player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             }
-
         }
     }
 

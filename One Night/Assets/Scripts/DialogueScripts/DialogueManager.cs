@@ -5,13 +5,16 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> sentences;
+    public Queue<string> sentences;
     public Text name;
     public Text dialogueText;
     bool dialogueStarted = false;
+    public bool lastSentence = false;
+    public GameObject player;
 
     private void Start(){
         sentences = new Queue<string>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update(){
@@ -21,9 +24,12 @@ public class DialogueManager : MonoBehaviour
         if (!dialogueStarted){
             GetComponent<FadeElements>().Fade_Out();
         }
+        if (sentences.Count == 0 && dialogueStarted)
+            lastSentence = true;
     }
 
     public void StartEvent(Dialogue dialogue){
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         dialogueStarted = true;
         name.text = dialogue.name;
         sentences.Clear();
@@ -44,6 +50,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void End(){
+        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         dialogueStarted = false;
+        lastSentence = false;
     }
 }
