@@ -38,11 +38,11 @@ public class Book : MonoBehaviour
         mgr.DisplayNext();
         active.enabled = true;
 
-        //if (gameObject.transform.parent.GetChild(0).gameObject.name == "ReadBook")
-        //    Destroy(gameObject.transform.parent.gameObject);
+        if (gameObject.transform.parent.GetChild(0).gameObject.name == "ReadBook")
+            Destroy(gameObject.transform.parent.GetChild(0).gameObject);
 
-        //buttonsActive = false;
-        //decisionMade = true;
+        buttonsActive = false;
+        decisionMade = true;
     }
 
     public void No(){

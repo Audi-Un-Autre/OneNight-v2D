@@ -21,14 +21,6 @@ public class DialogueZoneActive : MonoBehaviour
 
     private void Update(){
         if (colliding && Input.GetKeyDown(KeyCode.E) && !dialougeStarted){
-            // disables all other puzzles/dialogues while the one the current one is active
-            foreach (GameObject puzzle in puzzles){
-                if (puzzle.transform.parent.name == gameObject.name)
-                    puzzle.SetActive(true);
-                else
-                    puzzle.SetActive(false);
-            }
-
             // initial dialogue
             gameObject.GetComponentInChildren<DialogueTrigger>().startDialogue();
             dialougeStarted = true;
@@ -42,6 +34,15 @@ public class DialogueZoneActive : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.transform.tag == "Player"){
+
+            // disable all other puzzles/dialogues except for the current one
+            foreach (GameObject puzzle in puzzles){
+                if (puzzle.transform.parent.name == gameObject.name)
+                    puzzle.SetActive(true);
+                else
+                    puzzle.SetActive(false);
+            }
+
             player = collision.gameObject;
             colliding = true;
             Debug.Log("Colliding");
