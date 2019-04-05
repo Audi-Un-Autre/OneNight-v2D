@@ -23,16 +23,10 @@ public class GardenPuzzle : MonoBehaviour
 
     private void Start(){
         mgr = FindObjectOfType<DialogueManager>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        active = GetComponent<DialogueZoneActive>();
+        active = GetComponentInParent<DialogueZoneActive>();
     }
 
     private void Update(){
-        if (bookRead && !initialized){
-            Destroy(gameObject.transform.GetChild(0).gameObject);
-            initialized = true;
-        }
-
         if (bookRead && mgr.lastSentence && initialized && !buttonsActive && !solved){
             active.enabled = false;
             yes.SetActive(true);
@@ -42,6 +36,13 @@ public class GardenPuzzle : MonoBehaviour
             yes.GetComponent<Text>().text = "Traverse the garden patch.";
             no.GetComponent<Text>().text = "What the hell, NO.";
             buttonsActive = true;
+        }
+    }
+
+    public void FirstTime(){
+        if (bookRead && !initialized){
+            Destroy(gameObject.transform.parent.GetChild(0).gameObject);
+            initialized = true;
         }
     }
 
@@ -55,18 +56,21 @@ public class GardenPuzzle : MonoBehaviour
         active.enabled = true;
 
         if (inWoods && !gotKey){
+            player = GameObject.FindGameObjectWithTag("Player");
             player.transform.position = spawnTo.transform.position;
             if(!beenThere){
-                Destroy(gameObject.transform.GetChild(0).gameObject);
+                Destroy(gameObject.transform.parent.GetChild(0).gameObject);
                 beenThere = true;
             }
             inWoods = false;
         }else if (!inWoods && !gotKey){
+            player = GameObject.FindGameObjectWithTag("Player");
             player.transform.position = spawnBack.transform.position;
             inWoods = true;
         }else if (!inWoods && gotKey){
+            player = GameObject.FindGameObjectWithTag("Player");
             player.transform.position = spawnBack.transform.position;
-            Destroy(gameObject.transform.GetChild(0).gameObject);
+            Destroy(gameObject.transform.parent.GetChild(0).gameObject);
             solved = true;
         }
 
@@ -89,5 +93,10 @@ public class GardenPuzzle : MonoBehaviour
 
     public void ObtainedKey(){
         gotKey = true;
+    }
+
+    public void ObtainedBook(){
+        bookRead = true;
+        FirstTime();
     }
 }

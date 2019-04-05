@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Well : MonoBehaviour
+public class Book : MonoBehaviour
 {
     public GameObject yes, no, selection;
     public DialogueZoneActive active;
     public DialogueManager mgr;
     public bool buttonsActive = false;
     public bool decisionMade = false;
-    public bool gotKey = false;
 
     void Start(){
         mgr = FindObjectOfType<DialogueManager>();
@@ -18,34 +17,32 @@ public class Well : MonoBehaviour
     }
 
     void Update(){
-
-        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "DecideWell" && !buttonsActive){
+        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "ReadBook" && !buttonsActive){
             active.enabled = false;
             yes.SetActive(true);
             no.SetActive(true);
             selection.SetActive(true);
             selection.GetComponent<Button>().Select();
-            yes.GetComponent<Text>().text = "Put your hand in the bucket.";
-            no.GetComponent<Text>().text = "What the hell, NO.";
+            yes.GetComponent<Text>().text = "Read the book.";
+            no.GetComponent<Text>().text = "Nah ... I'm good.";
             buttonsActive = true;
         }
     }
-
+    
     public void Yes(){
         // turn buttons off after choices are made and enable paused scripts
         yes.SetActive(false);
         no.SetActive(false);
         selection.SetActive(false);
-        gotKey = true;
 
         mgr.DisplayNext();
         active.enabled = true;
 
-        if (gameObject.transform.parent.GetChild(0).gameObject.name == "DecideWell")
-            Destroy(gameObject.transform.parent.GetChild(0).gameObject);
+        //if (gameObject.transform.parent.GetChild(0).gameObject.name == "ReadBook")
+        //    Destroy(gameObject.transform.parent.gameObject);
 
-        buttonsActive = false;
-        decisionMade = true;
+        //buttonsActive = false;
+        //decisionMade = true;
     }
 
     public void No(){

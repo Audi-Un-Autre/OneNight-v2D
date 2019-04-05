@@ -9,34 +9,27 @@ public class DialogueZoneActive : MonoBehaviour
     private bool colliding;
     private GameObject player;
     private bool requirementMet;
-    public bool initial = false;
+    private GameObject[] puzzles;
 
     private void Start(){
         dialougeStarted = false;
         colliding = false;
         mgr = FindObjectOfType<DialogueManager>();
         requirementMet = false;
+        puzzles = GameObject.FindGameObjectsWithTag("Puzzle");
     }
 
     private void Update(){
         if (colliding && Input.GetKeyDown(KeyCode.E) && !dialougeStarted){
-            // initial dialogue & freeze player in place
-
-            if (gameObject.name == "PatchPuzzle"){
-                if (!gameObject.GetComponent<GardenPuzzle>().enabled)
-                    gameObject.GetComponent<GardenPuzzle>().enabled = true;
-                if (FindObjectOfType<Well>().enabled)
-                    FindObjectOfType<Well>().enabled = false;
-            }
-            else if (gameObject.name == "WellPuzzle"){
-                if (!gameObject.GetComponent<Well>().enabled)
-                    gameObject.GetComponent<Well>().enabled = true;
-                if (FindObjectOfType<GardenPuzzle>().enabled)
-                    FindObjectOfType<GardenPuzzle>().enabled = false;
+            // disables all other puzzles/dialogues while the one the current one is active
+            foreach (GameObject puzzle in puzzles){
+                if (puzzle.transform.parent.name == gameObject.name)
+                    puzzle.SetActive(true);
+                else
+                    puzzle.SetActive(false);
             }
 
-
-            //initial = true;
+            // initial dialogue
             gameObject.GetComponentInChildren<DialogueTrigger>().startDialogue();
             dialougeStarted = true;
         }
