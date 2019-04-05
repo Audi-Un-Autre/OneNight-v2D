@@ -86,4 +86,8 @@ public class GardenPuzzle : MonoBehaviour
         decisionMade = false;
         buttonsActive = false;
     }
+
+    public void ObtainedKey(){
+        gotKey = true;
+    }
 }

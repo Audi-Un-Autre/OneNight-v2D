@@ -1,18 +1,63 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Well : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public GameObject yes, no, selection;
+    public DialogueZoneActive active;
+    public DialogueManager mgr;
+    public bool buttonsActive = false;
+    public bool decisionMade = false;
+    public bool gotKey = false;
+
+    void Start(){
+        mgr = FindObjectOfType<DialogueManager>();
+        active = GetComponent<DialogueZoneActive>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
+
+        if (mgr.lastSentence && gameObject.transform.GetChild(0).gameObject.name == "DecideWell" && !buttonsActive){
+            active.enabled = false;
+            yes.SetActive(true);
+            no.SetActive(true);
+            selection.SetActive(true);
+            selection.GetComponent<Button>().Select();
+            yes.GetComponent<Text>().text = "Put your hand in the bucket.";
+            no.GetComponent<Text>().text = "What the hell, NO.";
+            buttonsActive = true;
+        }
+    }
+
+    public void Yes(){
+        // turn buttons off after choices are made and enable paused scripts
+        yes.SetActive(false);
+        no.SetActive(false);
+        selection.SetActive(false);
+        gotKey = true;
+
+        mgr.DisplayNext();
+        active.enabled = true;
+
+        if (gameObject.transform.GetChild(0).gameObject.name == "DecideWell")
+            Destroy(gameObject.transform.GetChild(0).gameObject);
+
+        buttonsActive = false;
+        decisionMade = true;
+    }
+
+    public void No(){
+        // turn buttons off after choices are made and enable paused scripts
+        yes.SetActive(false);
+        no.SetActive(false);
+        selection.SetActive(false);
+
+        mgr.DisplayNext();
+        active.enabled = true;
+
+        decisionMade = false;
+        buttonsActive = false;
     }
 }

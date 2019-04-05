@@ -9,6 +9,7 @@ public class DialogueZoneActive : MonoBehaviour
     private bool colliding;
     private GameObject player;
     private bool requirementMet;
+    public bool initial = false;
 
     private void Start(){
         dialougeStarted = false;
@@ -20,6 +21,22 @@ public class DialogueZoneActive : MonoBehaviour
     private void Update(){
         if (colliding && Input.GetKeyDown(KeyCode.E) && !dialougeStarted){
             // initial dialogue & freeze player in place
+
+            if (gameObject.name == "PatchPuzzle"){
+                if (!gameObject.GetComponent<GardenPuzzle>().enabled)
+                    gameObject.GetComponent<GardenPuzzle>().enabled = true;
+                if (FindObjectOfType<Well>().enabled)
+                    FindObjectOfType<Well>().enabled = false;
+            }
+            else if (gameObject.name == "WellPuzzle"){
+                if (!gameObject.GetComponent<Well>().enabled)
+                    gameObject.GetComponent<Well>().enabled = true;
+                if (FindObjectOfType<GardenPuzzle>().enabled)
+                    FindObjectOfType<GardenPuzzle>().enabled = false;
+            }
+
+
+            //initial = true;
             gameObject.GetComponentInChildren<DialogueTrigger>().startDialogue();
             dialougeStarted = true;
         }
