@@ -43,8 +43,8 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 0.97083807, b: 0, a: 1}
   m_Intensity: 40
-  m_Range: 4.43
-  m_SpotAngle: 82
+  m_Range: 20
+  m_SpotAngle: 76
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0

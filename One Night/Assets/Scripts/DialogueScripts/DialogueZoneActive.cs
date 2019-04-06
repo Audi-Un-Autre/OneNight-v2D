@@ -34,7 +34,7 @@ public class DialogueZoneActive : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.transform.tag == "Player"){
-
+            int i = 0;
             // disable all other puzzles/dialogues except for the current one
             foreach (GameObject puzzle in puzzles){
                 if (puzzle.transform.parent.name == gameObject.name)

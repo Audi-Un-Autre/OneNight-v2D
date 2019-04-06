@@ -3203,7 +3203,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336270149}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -7680,7 +7680,7 @@ GameObject:
   - component: {fileID: 1745911913}
   - component: {fileID: 1745911912}
   m_Layer: 0
-  m_Name: GardenDoor
+  m_Name: GardenDoorIn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

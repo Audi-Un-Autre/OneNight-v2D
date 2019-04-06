@@ -86,24 +86,24 @@ public class playerController : MonoBehaviour
 
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision){
+    public void OnTriggerStay2D(Collider2D collision){
         switch (collision.gameObject.name){
             /////////////////// Outside Doors /////////////////////
-            case "MansionDoor":
+            case "HouseDoor":
                 currentRoom = "AudreyHouse";
                 previousRoom = "Audrey";
                 DontDestroyOnLoad(this.gameObject);
                 SceneManager.LoadScene("AudreyHouse", LoadSceneMode.Single);
                 break;
 
-            case "GreenhouseDoor":
+            case "GardenDoor":
                 currentRoom = "GreenHouse";
                 previousRoom = "Audrey";
                 DontDestroyOnLoad(this.gameObject);
                 SceneManager.LoadScene("GardenHouse", LoadSceneMode.Single);
                 break;
 
-            case "BoatyardDoor":
+            case "BoatDoor":
                 currentRoom = "BoatHouse";
                 previousRoom = "Audrey";
                 DontDestroyOnLoad(this.gameObject);
@@ -118,14 +118,14 @@ public class playerController : MonoBehaviour
                 SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
                 break;
 
-            case "GardenDoor":
+            case "GardenDoorIn":
                 currentRoom = "Audrey";
                 previousRoom = "GardenHouse";
                 DontDestroyOnLoad(this.gameObject);
                 SceneManager.LoadScene("Audrey", LoadSceneMode.Single);
                 break;
 
-            case "BoatDoor":
+            case "BoatDoorIn":
                 currentRoom = "Audrey";
                 previousRoom = "BoatHouse";
                 DontDestroyOnLoad(this.gameObject);
