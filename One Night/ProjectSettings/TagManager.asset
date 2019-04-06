@@ -9,7 +9,6 @@ TagManager:
   - SolidObject
   - PressurePlate
   - Item
-  - Puzzle
   layers:
   - Default
   - TransparentFX
