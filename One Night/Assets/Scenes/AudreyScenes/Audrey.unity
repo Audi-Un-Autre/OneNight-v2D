@@ -16975,7 +16975,7 @@ GameObject:
   - component: {fileID: 581223569}
   m_Layer: 0
   m_Name: DoorScript
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19790,7 +19790,7 @@ GameObject:
   - component: {fileID: 682708788}
   m_Layer: 0
   m_Name: PatchScript
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27863,7 +27863,7 @@ GameObject:
   - component: {fileID: 859180116}
   m_Layer: 0
   m_Name: DoorScript
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28001,7 +28001,7 @@ GameObject:
   - component: {fileID: 915000382}
   m_Layer: 0
   m_Name: WellScript
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52193,7 +52193,7 @@ GameObject:
   - component: {fileID: 1012092334}
   m_Layer: 0
   m_Name: BookScript
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106170,7 +106170,7 @@ GameObject:
   - component: {fileID: 1689309240}
   m_Layer: 0
   m_Name: DoorScript
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
