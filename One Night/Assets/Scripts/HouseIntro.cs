@@ -10,10 +10,9 @@ public class HouseIntro : MonoBehaviour
     }
 
     private void Update(){
-        Vector3 diff = Camera.main.ScreenToWorldPoint(player.transform.position) - transform.position;
-        diff.Normalize();
-        float rotz = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotz - 90);
+        Vector3 direction = player.transform.position - transform.position;
+        float rotz = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(rotz - 90, Vector3.forward);
     }
 
     private void OnTriggerEnter2D(Collider2D collision){

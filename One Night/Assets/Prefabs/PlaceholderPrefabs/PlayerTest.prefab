@@ -1029,11 +1029,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f4eaa402f3801c48b82739c9d3b28d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: -30
+  offset: -45
   light: {fileID: 46465621}
   maxLight: 100
   batterDrainRate: 2
   intensityModifier: 50
+  player: {fileID: 5533178446732551373}
 --- !u!1 &1431909505
 GameObject:
   m_ObjectHideFlags: 0

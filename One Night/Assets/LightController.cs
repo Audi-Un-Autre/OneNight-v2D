@@ -38,11 +38,15 @@ public class LightController : MonoBehaviour
             light.SetActive(isOn = !isOn);
         }
 
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+        //Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        //float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
 
-        if(isOn)
+        Vector3 difference = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(rotZ, Vector3.forward);
+
+        if (isOn)
         {
             batteryLeft -= batterDrainRate * Time.deltaTime;
         }
