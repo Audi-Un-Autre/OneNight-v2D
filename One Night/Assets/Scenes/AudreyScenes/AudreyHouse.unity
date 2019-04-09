@@ -13900,7 +13900,7 @@ GameObject:
   - component: {fileID: 841571242}
   m_Layer: 0
   m_Name: Piano
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14164,7 +14164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - Huh. Nice piano.
+    - 'Huh. Nice piano. '
     name: Rick
 --- !u!66 &841571244
 CompositeCollider2D:
@@ -21179,7 +21179,7 @@ GameObject:
   - component: {fileID: 916803073}
   m_Layer: 0
   m_Name: Piano (1)
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22291,7 +22291,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - This clock is broken.
+    - '12:01AM.
+
+      No that cna''t be right, this clock''s gotta be broken. I just got here around
+      7PM. '
     name: Rick
 --- !u!66 &1146505042
 CompositeCollider2D:
@@ -27596,8 +27599,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - I can't budge it. Something is blocking the doors from opening it.
-    - Gonna have to find something that opens it maybe.
+    - The door won't budge. . .
+    - 'There''s some words inscribed here.
+
+      "To GAB, my love, my only."'
     name: Rick
 --- !u!1 &1442457143
 GameObject:
@@ -28333,7 +28338,7 @@ GameObject:
   - component: {fileID: 1506210734}
   m_Layer: 0
   m_Name: Books
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29874,6 +29879,7 @@ GameObject:
   - component: {fileID: 1991988612}
   - component: {fileID: 1991988614}
   - component: {fileID: 1991988613}
+  - component: {fileID: 1991988615}
   m_Layer: 0
   m_Name: NilIntro
   m_TagString: Untagged
@@ -30016,6 +30022,27 @@ MonoBehaviour:
     - 'Your tour ... I must prepare you for it. For the house. '
     - Please let me know when you're ready. . .* smiles widely *
     name: Nil
+--- !u!114 &1991988615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991988608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635a62f2131d06941b8ef6344aeaa514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - 'Oh hi, a person. Finally. Yes, but ... you know what nevermind. Yeah, I''m
+      here for the listing. '
+    - 
+    - 
+    - 
+    - 
+    name: Rick
 --- !u!1 &2061195524
 GameObject:
   m_ObjectHideFlags: 0
