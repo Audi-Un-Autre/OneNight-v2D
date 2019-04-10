@@ -29,7 +29,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartEvent(Dialogue dialogue){
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         dialogueStarted = true;
         name.text = dialogue.name;
@@ -51,7 +51,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void End(){
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.lockState = CursorLockMode.None;
         player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         dialogueStarted = false;
         lastSentence = false;
