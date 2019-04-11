@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Queue<string> sentences;
     public Text name;
     public Text dialogueText;
-    bool dialogueStarted = false;
+    public bool dialogueStarted = false;
     public bool lastSentence = false;
     public GameObject player;
 

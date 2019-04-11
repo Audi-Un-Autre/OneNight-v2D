@@ -6,78 +6,167 @@ using UnityEngine.UI;
 public class Piano : MonoBehaviour
 {
     public DialogueManager mgr;
-    public GameObject yes, no, selection;
+    public GameObject g, c, a, b, d, f, selection1, selection2, selection3;
     public DialogueZoneActive active;
     public bool buttonsActive = false;
-    public bool choice = false;
+    public bool decisionMade = false;
     public GameObject openDoor;
-    public char[] pianoLetters;
+    public bool fail;
 
     void Start(){
         mgr = FindObjectOfType<DialogueManager>();
         active = GetComponentInParent<DialogueZoneActive>();
+        fail = false;
     }
 
+   
     void Update(){
-        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "G" && !buttonsActive){
+        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.activeSelf && !buttonsActive && !fail){
             active.enabled = false;
-            yes.SetActive(true);
-            no.SetActive(true);
-            selection.SetActive(true);
-            selection.GetComponent<Button>().Select();
-            yes.GetComponent<Text>().text = "Press G";
-            no.GetComponent<Text>().text = "Press A";
+            g.SetActive(true);
+            c.SetActive(true);
+            selection1.SetActive(true);
+            selection1.GetComponent<Button>().Select();
+            g.GetComponent<Text>().text = "Press G";
+            c.GetComponent<Text>().text = "Press C";
+            buttonsActive = true;
+        }
+        
+        if (mgr.lastSentence && gameObject.transform.parent.GetChild(1).gameObject.activeSelf && !buttonsActive)
+        {
+            decisionMade = false;
+            active.enabled = false;
+            d.SetActive(true);
+            a.SetActive(true);
+            selection2.SetActive(true);
+            selection2.GetComponent<Button>().Select();
+            d.GetComponent<Text>().text = "Press D";
+            a.GetComponent<Text>().text = "Press A";
             buttonsActive = true;
         }
 
-        else if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "A" && !buttonsActive)
+        if (mgr.lastSentence && gameObject.transform.parent.GetChild(2).gameObject.activeSelf && !buttonsActive)
         {
+            decisionMade = false;
             active.enabled = false;
-            yes.SetActive(true);
-            no.SetActive(true);
-            selection.SetActive(true);
-            selection.GetComponent<Button>().Select();
-            yes.GetComponent<Text>().text = "Press A";
-            no.GetComponent<Text>().text = "Press G";
+            f.SetActive(true);
+            b.SetActive(true);
+            selection3.SetActive(true);
+            selection3.GetComponent<Button>().Select();
+            f.GetComponent<Text>().text = "Press F";
+            b.GetComponent<Text>().text = "Press B";
             buttonsActive = true;
         }
-
-        else if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "B" && !buttonsActive)
-        {
-            active.enabled = false;
-            yes.SetActive(true);
-            no.SetActive(true);
-            selection.SetActive(true);
-            selection.GetComponent<Button>().Select();
-            yes.GetComponent<Text>().text = "Press A";
-            no.GetComponent<Text>().text = "Press B";
-            buttonsActive = true;
-        }
+        
     }
 
-    public void RightChoice(){
-        // turn buttons off after choices are made and enable paused scripts
-        yes.SetActive(false);
-        no.SetActive(false);
-        selection.SetActive(false);
+    public void PuzzleFailed(){
+        fail = true;
+    }
 
-        mgr.DisplayNext();
-        active.enabled = true;
+    public void G(){
+        // turn buttons off after choices are made and enable paused scripts
+        g.SetActive(false);
+        c.SetActive(false);
+        selection1.SetActive(false);
+
+        gameObject.transform.parent.GetChild(0).gameObject.SetActive(false);
 
         buttonsActive = false;
-        choice = true;
+        decisionMade = true;
+
+        gameObject.transform.parent.GetChild(1).gameObject.SetActive(true);
+    }
+
+    public void A()
+    {
+        // turn buttons off after choices are made and enable paused scripts
+        d.SetActive(false);
+        a.SetActive(false);
+        selection2.SetActive(false);
+
+        gameObject.transform.parent.GetChild(1).gameObject.SetActive(false);
+
+        buttonsActive = false;
+        decisionMade = true;
+
+        gameObject.transform.parent.GetChild(2).gameObject.SetActive(true);
+    }
+
+    public void B()
+    {
+        // turn buttons off after choices are made and enable paused scripts
+        f.SetActive(false);
+        b.SetActive(false);
+        selection3.SetActive(false);
+
+        gameObject.transform.parent.GetChild(2).gameObject.SetActive(false);
+
+        buttonsActive = false;
+        decisionMade = true;
+
+        if(fail){
+            WrongChoice();
+            gameObject.transform.parent.GetChild(3).GetComponent<DialogueTrigger>().startDialogue();
+        }
+        else{
+            RightChoice();
+            gameObject.transform.parent.GetChild(4).GetComponent<DialogueTrigger>().startDialogue();
+            Destroy(gameObject.transform.parent.GetChild(3).gameObject);
+            Destroy(gameObject.transform.parent.GetChild(4).gameObject);
+            Destroy(GameObject.Find("NilIntro"));
+        }
     }
 
     public void WrongChoice(){
         // turn buttons off after choices are made and enable paused scripts
-        yes.SetActive(false);
-        no.SetActive(false);
-        selection.SetActive(false);
+        g.SetActive(false);
+        c.SetActive(false);
+
+        d.SetActive(false);
+        a.SetActive(false);
+
+        f.SetActive(false);
+        b.SetActive(false);
+
+        selection1.SetActive(false);
+        selection2.SetActive(false);
+        selection3.SetActive(false);
+
+        
+        mgr.DisplayNext();
+        active.enabled = true;
+
+        decisionMade = false;
+        buttonsActive = false;
+
+        gameObject.transform.parent.GetChild(0).gameObject.SetActive(true);
+    }
+
+    public void RightChoice(){
+
+        //Disable all canvas components
+        g.SetActive(false);
+        c.SetActive(false);
+
+        d.SetActive(false);
+        a.SetActive(false);
+
+        f.SetActive(false);
+        b.SetActive(false);
+
+        selection1.SetActive(false);
+        selection2.SetActive(false);
+        selection3.SetActive(false);
 
         mgr.DisplayNext();
         active.enabled = true;
 
-        choice = false;
+        decisionMade = false;
         buttonsActive = false;
+
+        //open the door block the player in and block off the maindoor from exit
+        Destroy(openDoor);
+        GameObject.Find("MainDoor").GetComponent<CompositeCollider2D>().isTrigger = false;
     }
 }
