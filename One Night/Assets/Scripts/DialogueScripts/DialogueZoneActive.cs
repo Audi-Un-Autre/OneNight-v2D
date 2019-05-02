@@ -34,15 +34,6 @@ public class DialogueZoneActive : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.transform.tag == "Player"){
-
-            if (gameObject.name == "Piano"){
-                gameObject.GetComponentInChildren<Piano>().fail = false;
-            }
-            if (gameObject.name == "Piano2"){
-                gameObject.GetComponentInChildren<Piano>().fail = false;
-            }
-
-
             // disable all other puzzles/dialogues except for the current one
             foreach (GameObject puzzle in puzzles){
                 if (puzzle.transform.parent.name == gameObject.name)
@@ -50,6 +41,11 @@ public class DialogueZoneActive : MonoBehaviour
                 else
                     puzzle.SetActive(false);
             }
+
+            if (gameObject.name == "Piano")
+                gameObject.GetComponentInChildren<Piano>().fail = false;
+            if (gameObject.name == "Piano2")
+                gameObject.GetComponentInChildren<Piano>().fail = false;
 
             player = collision.gameObject;
             colliding = true;

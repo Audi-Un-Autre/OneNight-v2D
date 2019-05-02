@@ -115,6 +115,7 @@ public class Piano : MonoBehaviour
             Destroy(gameObject.transform.parent.GetChild(3).gameObject);
             Destroy(gameObject.transform.parent.GetChild(4).gameObject);
             Destroy(GameObject.Find("NilIntro"));
+            GameObject.Find("MainDoor").GetComponent<DialogueZoneActive>().enabled = true;
         }
     }
 
