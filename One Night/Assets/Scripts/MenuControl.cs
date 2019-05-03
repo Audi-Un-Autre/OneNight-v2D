@@ -32,7 +32,7 @@ public class MenuControl : MonoBehaviour
     }
 
     public void NewGame(){
-        SceneManager.LoadScene("Audrey");
+        SceneManager.LoadScene("About");
     }
 
     public void ContinueGame(){

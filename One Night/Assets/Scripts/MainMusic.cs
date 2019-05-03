@@ -12,4 +12,11 @@ public class MainMusic : MonoBehaviour
             Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
     }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "Audrey"){
+            Destroy(gameObject);
+        }
+    }
 }

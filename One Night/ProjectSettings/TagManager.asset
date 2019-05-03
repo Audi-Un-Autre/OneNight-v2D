@@ -10,6 +10,7 @@ TagManager:
   - PressurePlate
   - Item
   - Puzzle
+  - MenuMusic
   layers:
   - Default
   - TransparentFX

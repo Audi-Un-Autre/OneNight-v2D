@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,15 +15,18 @@ public class DialogueManager : MonoBehaviour
 
     private void Start(){
         sentences = new Queue<string>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        if (SceneManager.GetActiveScene().name != "About")
+            player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update(){
-        if (dialogueStarted){
-            GetComponent<FadeElements>().Fade_In();
-        }
-        if (!dialogueStarted){
-            GetComponent<FadeElements>().Fade_Out();
+        if (SceneManager.GetActiveScene().name != "About"){
+            if (dialogueStarted){
+                GetComponent<FadeElements>().Fade_In();
+            }
+            if (!dialogueStarted){
+                GetComponent<FadeElements>().Fade_Out();
+            }
         }
         if (sentences.Count == 0 && dialogueStarted)
             lastSentence = true;
@@ -30,7 +34,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartEvent(Dialogue dialogue){
         //Cursor.lockState = CursorLockMode.Locked;
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        if (SceneManager.GetActiveScene().name != "About")
+            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         dialogueStarted = true;
         name.text = dialogue.name;
         sentences.Clear();
@@ -52,7 +57,8 @@ public class DialogueManager : MonoBehaviour
 
     public void End(){
         //Cursor.lockState = CursorLockMode.None;
-        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        if (SceneManager.GetActiveScene().name != "About")
+            player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         dialogueStarted = false;
         lastSentence = false;
     }

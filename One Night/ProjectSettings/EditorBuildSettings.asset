@@ -36,6 +36,6 @@ EditorBuildSettings:
     path: Assets/Scenes/AudreyScenes/MainMenu.unity
     guid: 11246f35b609656438630ce8c4c7c517
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/PauseMenu.unity
-    guid: d7bb0674e31a89e4bb18e4bfec5a75fb
+    path: Assets/Scenes/AudreyScenes/About.unity
+    guid: 18fdfd9e8005a00439d2eb27dad57330
   m_configObjects: {}
