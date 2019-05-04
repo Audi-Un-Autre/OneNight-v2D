@@ -546,9 +546,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'Your name is Rick. Hello, Rick.
-
-      You''ve told me you''ve been searching for a house. . .'
+    - "Your name is Rick. \n\nHello, Rick.\nI am Doctor &*^&#.\nYou've told me you've
+      been searching for a house. . ."
     - 'A place to call . . . HOME.
 
       You told me that you found a house.'
@@ -559,21 +558,22 @@ MonoBehaviour:
 '
     - ARE YOU SURE RICK ?
     - 'Well, if you''re so sure, can you recall to me the story of how you found this
-      HOUSE ?
+      HOUSE?
 
-      Oh, you have INSTRUCTIONS ?'
-    - '/// W, A, S, D to move. ///
-
-
-      /// E to interact. ///'
+      Oh, you have INSTRUCTIONS?'
+    - "/// W, A, S, D to move.\n\n/// E to interact. \n\n/// Right click to toggle
+      flashlight."
     - Thank you, Rick. I'll remember that as you tell me the story.
-    - 'Oh, something else ?
-
-
-      /// Puzzles and traps. Be wary. ///'
+    - "Oh, something else ?\n\n/// Puzzles and traps. \n/// Be wary."
     - 'How odd, but thank you.
 
-      I''m ready now.'
+      I''m ready now.
+
+
+      . . .
+
+
+      Are YOU ?'
     name: DOCTOR
 --- !u!114 &302599989
 MonoBehaviour:
