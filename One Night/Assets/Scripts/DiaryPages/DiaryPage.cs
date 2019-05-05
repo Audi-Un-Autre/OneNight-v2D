@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class DiaryPage : ScriptableObject
 {
+    [TextArea]
     public string text;
     public string pageNumber;
     

@@ -6,10 +6,10 @@ using UnityEngine;
 public class playerController : MonoBehaviour
 {
 	public float speed;
-	private float walkSpeed;
+	public float walkSpeed;
 
 	private Rigidbody2D rb;
-	private Vector2 moveVelocity;
+	public Vector2 moveVelocity;
 	private Vector2 lastPos;
 	private float distanceTraveled;
 	public float stamina;
@@ -69,7 +69,6 @@ public class playerController : MonoBehaviour
 			{
 				walkSpeed = speed * 2f;
 				currStamina -= Vector2.Distance(transform.position, lastPos);
-				
 			}
 			else
 			{

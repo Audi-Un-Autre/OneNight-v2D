@@ -12,12 +12,14 @@ public class LightController : MonoBehaviour
     public float batterDrainRate;
     private Light lightComp;
     public float intensityModifier;
+    public GameObject player;
 
     void Start()
     {
         isOn = false;
         batteryLeft = maxLight;
         lightComp = light.GetComponent<Light>();
+        player = transform.root.gameObject;
     }
 
     public void RefreshLight()
@@ -44,7 +46,7 @@ public class LightController : MonoBehaviour
 
         Vector3 difference = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(rotZ, Vector3.forward);
+        player.transform.rotation = Quaternion.AngleAxis(rotZ, Vector3.forward);
 
         if (isOn)
         {

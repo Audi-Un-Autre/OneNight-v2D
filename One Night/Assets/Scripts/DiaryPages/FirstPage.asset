@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a26d2c3cee86d64e876791cd5a96fb5, type: 3}
   m_Name: FirstPage
   m_EditorClassIdentifier: 
-  text: This is the test text
+  text: 'Hello friend...
+
+    Today was rather intersting. My new toy got out today... He broke my last bear
+    trap with his legs. Why do my toys keep breaking? He tried to steal my trap with
+    ''E''. When I found him he tried to run with SHIFT, but he ran out of stamina.
+    Then he tried to hide... I be he wished he could escape this reality haha... I
+    found it rather funny. I''ll get a new toy soon enough...
+
+
+    Goodbye friend'
   pageNumber: 1
   diaryPage: {fileID: 21300000, guid: 3208f05457d0fcc4a874da56cd0c63ec, type: 3}
-  diaryScribble: {fileID: 0}
+  diaryScribble: {fileID: 21300000, guid: be8bf0ac606802042b2a2a8855166583, type: 3}

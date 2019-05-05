@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a26d2c3cee86d64e876791cd5a96fb5, type: 3}
+  m_Name: ThirdPage
+  m_EditorClassIdentifier: 
+  text: 'Hello friend,
+
+    The other me has not shown up for days, I wonder if he FINALLY GOT THE MESSAGE.
+    I have noticed that you, friend, are missing some pages. HAS HE touched you? HAS
+    HE? Enough about him. My new toy has just arrived, but its sick... I''ll wait
+    till it feels better to PLAY WITH HIM. Maybe this one wont break as easily as...
+
+    If you find this please run away. I am not sure how much longer i will be able
+    to keep hiim at bay. Don''t do anything stupid. Hide if you must! Just stay away
+    from him...'
+  pageNumber: 3
+  diaryPage: {fileID: 0}
+  diaryScribble: {fileID: 0}
