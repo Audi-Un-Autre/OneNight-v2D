@@ -43,10 +43,13 @@ public class UnlockInitial : MonoBehaviour
         mgr.DisplayNext();
         active.enabled = true;
 
+        if (gameObject.transform.parent.GetChild(0).gameObject.name == "UseKey")
+            Destroy(gameObject.transform.parent.GetChild(0).gameObject);
 
         buttonsActive = false;
         decisionMade = true;
-        Destroy(gameObject.transform.parent.gameObject);
+
+        GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.Find("SpawnEscape").transform.position;
 
     }
 

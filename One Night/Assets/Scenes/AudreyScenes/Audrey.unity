@@ -20353,6 +20353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a025f2fc0c027459955fe1269ae8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  falsePause: 0
 --- !u!1 &774300603
 GameObject:
   m_ObjectHideFlags: 0
@@ -53446,6 +53447,7 @@ MonoBehaviour:
   dialogueStarted: 0
   lastSentence: 0
   player: {fileID: 0}
+  pause: {fileID: 0}
 --- !u!4 &1065961476
 Transform:
   m_ObjectHideFlags: 0
@@ -109861,7 +109863,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1818230846}
   - component: {fileID: 1818230845}
-  - component: {fileID: 1818230847}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -109920,18 +109921,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1818230847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818230844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 732b2008f4b9a684b9bfa6a0c7e76081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1858012348
 GameObject:
   m_ObjectHideFlags: 0

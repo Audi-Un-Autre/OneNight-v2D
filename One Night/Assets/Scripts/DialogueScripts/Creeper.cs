@@ -12,7 +12,7 @@ public class Creeper : MonoBehaviour
     public bool decisionMade = false;
     public GameObject door1, door2;
     public bool spokeTo;
-    public bool ending1, ending2;
+    public int ending;
 
     void Start(){
         mgr = FindObjectOfType<DialogueManager>();
@@ -37,8 +37,10 @@ public class Creeper : MonoBehaviour
                 Destroy(GameObject.Find("Food Puzzle").transform.GetChild(0).gameObject);
         }
 
-        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "Solve")
-            Destroy(gameObject.transform.parent.GetComponent<SpriteRenderer>());
+        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "Solve"){
+            //Destroy(gameObject.transform.parent.GetComponent<SpriteRenderer>());
+            //Destroy(gameObject.transform.parent.GetComponent<BoxCollider2D>());
+        }
     }
 
     public void Yes()
@@ -61,6 +63,7 @@ public class Creeper : MonoBehaviour
         Destroy(door1.transform.GetChild(0).gameObject);
         Destroy(door2.transform.GetChild(0).gameObject);
 
+        ending = 1;
     }
 
     public void No()
@@ -76,8 +79,9 @@ public class Creeper : MonoBehaviour
         decisionMade = false;
         buttonsActive = false;
 
-        Destroy(door1);
-        door2.GetComponent<CompositeCollider2D>().isTrigger = true;
+        Destroy(door1.transform.GetChild(0).gameObject);
+        Destroy(door2.transform.GetChild(0).gameObject);
 
+        ending = 2;
     }
 }

@@ -16,12 +16,12 @@ public class DialogueManager : MonoBehaviour
 
     private void Start(){
         sentences = new Queue<string>();
-        if (SceneManager.GetActiveScene().name != "About")
+        if (SceneManager.GetActiveScene().name != "About" && SceneManager.GetActiveScene().name != "Ending1" && SceneManager.GetActiveScene().name != "Ending2")
             player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update(){
-        if (gameObject.transform.parent.gameObject.name != "Opening" && SceneManager.GetActiveScene().name != "About"){
+        if (gameObject.transform.parent.gameObject.name != "Opening" && SceneManager.GetActiveScene().name != "About" && SceneManager.GetActiveScene().name != "Ending1" && SceneManager.GetActiveScene().name != "Ending2"){
             if (dialogueStarted){
                 GetComponent<FadeElements>().Fade_In();
             }
@@ -35,7 +35,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartEvent(Dialogue dialogue){
         //Cursor.lockState = CursorLockMode.Locked;
-        if (SceneManager.GetActiveScene().name != "About")
+        if (SceneManager.GetActiveScene().name != "About" && SceneManager.GetActiveScene().name != "Ending1" && SceneManager.GetActiveScene().name != "Ending2")
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         dialogueStarted = true;
         name.text = dialogue.name;
@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour
 
     public void End(){
         //Cursor.lockState = CursorLockMode.None;
-        if (SceneManager.GetActiveScene().name != "About")
+        if (SceneManager.GetActiveScene().name != "About" && SceneManager.GetActiveScene().name != "Ending1" && SceneManager.GetActiveScene().name != "Ending2")
             player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         dialogueStarted = false;
         lastSentence = false;

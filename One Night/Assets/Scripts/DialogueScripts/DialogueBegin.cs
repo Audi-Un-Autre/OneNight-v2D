@@ -31,6 +31,10 @@ public class DialogueBegin : MonoBehaviour
                 Time.timeScale = 1f;
                 gameObject.SetActive(false);
             }
+
+            else if (SceneManager.GetActiveScene().name == "Ending1" || SceneManager.GetActiveScene().name == "Ending2"){
+                SceneManager.LoadScene("MainMenu");
+            }
             else
                 SceneManager.LoadScene("Audrey");
         }

@@ -1931,7 +1931,7 @@ PrefabInstance:
     - target: {fileID: 5533178446732551373, guid: f4523b07916a7c94c8f31b16ba51d205,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5533178446732551368, guid: f4523b07916a7c94c8f31b16ba51d205,
         type: 3}
@@ -2421,7 +2421,7 @@ RectTransform:
   - {fileID: 718171579}
   - {fileID: 1742567424}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2623,6 +2623,7 @@ MonoBehaviour:
   mgr: {fileID: 0}
   buttonsActive: 0
   decisionMade: 0
+  ending: {fileID: 1234357766}
 --- !u!1 &404287365
 GameObject:
   m_ObjectHideFlags: 0
@@ -4618,7 +4619,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &573128132
 GameObject:
@@ -17333,7 +17334,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &810990643
 GameObject:
@@ -27345,101 +27346,13 @@ RectTransform:
   - {fileID: 1521009001}
   - {fileID: 7695572}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1120587168
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1120587171}
-  - component: {fileID: 1120587170}
-  - component: {fileID: 1120587169}
-  m_Layer: 0
-  m_Name: 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1120587169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120587168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e16c6112b3238af4a941561e590e8157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  falsePause: 0
-  start: {fileID: 1180890254}
-  quit: {fileID: 261777567}
-  falseContinue: {fileID: 7695571}
-  pause: {fileID: 1109087547}
-  opening: {fileID: 1909767581}
-  title: {fileID: 2114988413}
-  mainDialogue: {fileID: 331754580}
---- !u!114 &1120587170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120587168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 635a62f2131d06941b8ef6344aeaa514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - Rick. I think ... we need to talk.
-    - 'Yes, about that.
-
-      If you had the key - the answer within your very hands.'
-    - Yet you let it go. Down that hole with that man.
-    - WHY ?
-    - (You look down into your hands.)
-    - "(The DOCTOR offers you a kleenex.)\n\nYou know, Rick. \nGiving up isn't always
-      the answer.\nYou - you're a person who needs a gift."
-    - 'Yes, we all deserve gifts.
-
-      This HOUSE you spoke about, did you like it?'
-    - '(The DOCTOR smiles.)
-
-
-      Yes, good, I knew you''d be a good choice.'
-    - 'Would you like to own this HOUSE, Rick?
-
-      I think it''d be pleased to have you as well.'
-    - All of us in the HOUSE would be pleased to have you.
-    - Welcome HOME.
-    name: DOCTOR
---- !u!4 &1120587171
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120587168}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 618.37775, y: 362.02924, z: -4.575652}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1139460633
 GameObject:
   m_ObjectHideFlags: 0
@@ -27954,7 +27867,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160243143
 GameObject:
@@ -32463,7 +32376,7 @@ PrefabInstance:
     - target: {fileID: 5533178446732551373, guid: f4523b07916a7c94c8f31b16ba51d205,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5533178446732551368, guid: f4523b07916a7c94c8f31b16ba51d205,
         type: 3}
@@ -32623,8 +32536,7 @@ MonoBehaviour:
   door1: {fileID: 1390363597}
   door2: {fileID: 1442457143}
   spokeTo: 0
-  ending1: 0
-  ending2: 0
+  ending: 0
 --- !u!1 &1235861339
 GameObject:
   m_ObjectHideFlags: 0
@@ -34401,7 +34313,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1442457143}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ece0ee54ccbd593479800d92cc808064, type: 3}
   m_Name: 
@@ -37562,104 +37474,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1861454828
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1861454831}
-  - component: {fileID: 1861454830}
-  - component: {fileID: 1861454829}
-  m_Layer: 0
-  m_Name: 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1861454829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861454828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e16c6112b3238af4a941561e590e8157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  falsePause: 0
-  start: {fileID: 1180890254}
-  quit: {fileID: 261777567}
-  falseContinue: {fileID: 7695571}
-  pause: {fileID: 1109087547}
-  opening: {fileID: 1909767581}
-  title: {fileID: 2114988413}
-  mainDialogue: {fileID: 331754580}
---- !u!114 &1861454830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861454828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 635a62f2131d06941b8ef6344aeaa514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - 'Now, Rick.
-
-      I think you''re forgetting something.'
-    - (The DOCTOR smiles widely. His eyes seem to grow wider and wider with each second.)
-    - Me? No, I'm not all in your head, Rick. I'm very, very real. I welcome you to
-      the HOUSE.
-    - AND IT WELCOMES YOU.
-    - "(You panic, jumping out of the chair towards the door. \nYou grasp at the handles,
-      but it's useless and you know it's useless.)"
-    - (You give up, turning around to find the DOCTOR gone. The chairs you were both
-      sitting at are also gone. Slowly you turn around once more ...)
-    - 'The DOOR is gone. Did it ever even exist?
-
-      4 white walls bear down around you.
-
-'
-    - You SCREAM.
-    - You SCREAM.
-    - You SCREAM.
-    - 'You
-
-
-      . . .
-
-
-      laugh.
-
-      LAUGH!'
-    - ahahah
-    - AHAHAHAHAHAH.
-    name: DOCTOR
---- !u!4 &1861454831
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1861454828}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 618.37775, y: 362.02924, z: -4.575652}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1864029780
 GameObject:
@@ -38191,7 +38006,7 @@ GameObject:
   - component: {fileID: 1905996898}
   - component: {fileID: 1905996899}
   m_Layer: 0
-  m_Name: UseKey
+  m_Name: UseKeys
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38335,7 +38150,7 @@ RectTransform:
   - {fileID: 1537254067}
   - {fileID: 1814379644}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -38799,7 +38614,7 @@ Transform:
   - {fileID: 2051718109}
   - {fileID: 692456597}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 149.069}
 --- !u!114 &1991988612
 MonoBehaviour:
@@ -39283,7 +39098,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061195524
 GameObject:
@@ -39295,7 +39110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2061195525}
   m_Layer: 0
-  m_Name: SpawnBedroom
+  m_Name: SpawnEscape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39309,11 +39124,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061195524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.87, y: 7.93, z: -0.047024865}
+  m_LocalPosition: {x: 0.33, y: -4.22, z: -0.047024865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2073886140
 GameObject:
@@ -39588,7 +39403,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2114988413
 GameObject:

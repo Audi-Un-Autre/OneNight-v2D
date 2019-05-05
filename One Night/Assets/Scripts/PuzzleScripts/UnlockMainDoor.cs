@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UnlockMainDoor : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class UnlockMainDoor : MonoBehaviour
     public DialogueManager mgr;
     public bool buttonsActive = false;
     public bool decisionMade = false;
+    public Creeper ending;
 
     void Start()
     {
@@ -20,14 +22,14 @@ public class UnlockMainDoor : MonoBehaviour
 
     void Update()
     {
-        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "UseKey" && !buttonsActive)
+        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "UseKeys" && !buttonsActive)
         {
             active.enabled = false;
             yes.SetActive(true);
             no.SetActive(true);
             selection.SetActive(true);
             selection.GetComponent<Button>().Select();
-            yes.GetComponent<Text>().text = "YES.";
+            yes.GetComponent<Text>().text = "Leave.";
             no.GetComponent<Text>().text = "Not yet . . .";
             buttonsActive = true;
         }
@@ -46,10 +48,15 @@ public class UnlockMainDoor : MonoBehaviour
 
         buttonsActive = false;
         decisionMade = true;
-        Destroy(GameObject.Find("MainDoor").transform.GetChild(0).gameObject);
-        Destroy(gameObject.transform.parent.gameObject);
 
         
+        if (ending.ending == 1){
+            SceneManager.LoadScene("Ending1");
+        }
+
+        else if (ending.ending == 2){
+            SceneManager.LoadScene("Ending2");
+        }
     }
 
     public void No()
