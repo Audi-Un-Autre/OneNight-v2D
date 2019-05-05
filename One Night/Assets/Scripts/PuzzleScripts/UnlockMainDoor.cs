@@ -3,42 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Creeper : MonoBehaviour
+public class UnlockMainDoor : MonoBehaviour
 {
+
     public GameObject yes, no, selection;
     public DialogueZoneActive active;
     public DialogueManager mgr;
     public bool buttonsActive = false;
     public bool decisionMade = false;
-    public GameObject door1, door2;
-    public bool spokeTo;
-    public bool ending1, ending2;
 
-    void Start(){
+    void Start()
+    {
         mgr = FindObjectOfType<DialogueManager>();
         active = GetComponentInParent<DialogueZoneActive>();
     }
 
-    void Update(){
-        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "Solve" && !buttonsActive)
+    void Update()
+    {
+        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "UseKey" && !buttonsActive)
         {
             active.enabled = false;
             yes.SetActive(true);
             no.SetActive(true);
             selection.SetActive(true);
             selection.GetComponent<Button>().Select();
-            yes.GetComponent<Text>().text = "Yes.";
-            no.GetComponent<Text>().text = "No!";
+            yes.GetComponent<Text>().text = "YES.";
+            no.GetComponent<Text>().text = "Not yet . . .";
             buttonsActive = true;
         }
-
-        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "Initial"){
-            if (GameObject.Find("Food Puzzle").transform.GetChild(0).name == "Unsolved")
-                Destroy(GameObject.Find("Food Puzzle").transform.GetChild(0).gameObject);
-        }
-
-        if (mgr.lastSentence && gameObject.transform.parent.GetChild(0).gameObject.name == "Solve")
-            Destroy(gameObject.transform.parent.GetComponent<SpriteRenderer>());
     }
 
     public void Yes()
@@ -51,16 +43,13 @@ public class Creeper : MonoBehaviour
         mgr.DisplayNext();
         active.enabled = true;
 
-        if (gameObject.transform.parent.GetChild(0).gameObject.name == "Solve")
-            Destroy(gameObject.transform.parent.GetChild(0).gameObject);
-        Destroy(GameObject.Find("IntialDoor").transform.GetChild(0).gameObject);
 
         buttonsActive = false;
         decisionMade = true;
+        Destroy(GameObject.Find("MainDoor").transform.GetChild(0).gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
 
-        Destroy(door1.transform.GetChild(0).gameObject);
-        Destroy(door2.transform.GetChild(0).gameObject);
-
+        
     }
 
     public void No()
@@ -75,9 +64,5 @@ public class Creeper : MonoBehaviour
 
         decisionMade = false;
         buttonsActive = false;
-
-        Destroy(door1);
-        door2.GetComponent<CompositeCollider2D>().isTrigger = true;
-
     }
 }

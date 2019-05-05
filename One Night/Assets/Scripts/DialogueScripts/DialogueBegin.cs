@@ -7,6 +7,9 @@ public class DialogueBegin : MonoBehaviour
 {
     DialogueManager mgr;
     bool dialogueStarted = false;
+    public bool falsePause;
+
+    public GameObject start, quit, falseContinue, pause, opening, title, mainDialogue;
 
 
     private void Start()
@@ -16,14 +19,37 @@ public class DialogueBegin : MonoBehaviour
 
     public void AdvanceText(){
         if (mgr.DisplayNext()){
-            SceneManager.LoadScene("Audrey");
+            // reactive/deactive needed buttons and objects to return to normal state
+            if (SceneManager.GetActiveScene().name == "AudreyHouse"){
+                start.gameObject.SetActive(true);
+                quit.gameObject.SetActive(true);
+                falseContinue.gameObject.SetActive(false);
+                falsePause = false;
+                opening.SetActive(false);
+                title.gameObject.SetActive(true);
+                mainDialogue.SetActive(true);
+                Time.timeScale = 1f;
+                gameObject.SetActive(false);
+            }
+            else
+                SceneManager.LoadScene("Audrey");
         }
     }
 
 
     private void Update()
     {
-        if (!dialogueStarted){
+        // dialogue with the doctor 'false pause screen'
+        // activate and deactivate needed buttons
+        if (falsePause){
+            start.gameObject.SetActive(false);
+            quit.gameObject.SetActive(false);
+            falseContinue.gameObject.SetActive(true);
+            title.gameObject.SetActive(false);
+        }
+
+        if (!dialogueStarted)
+        {
             gameObject.GetComponent<DialogueTrigger>().startDialogue();
             dialogueStarted = true;
         }

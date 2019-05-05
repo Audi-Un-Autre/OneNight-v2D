@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuControl : MonoBehaviour
 {
     GameObject isPaused;
+    public bool falsePause;
 
     private void Start()
     {

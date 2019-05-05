@@ -12,6 +12,11 @@ public class Piano : MonoBehaviour
     public bool decisionMade = false;
     public GameObject openDoor;
     public bool fail;
+    public bool solved;
+    public GameObject opener;
+    public GameObject openerDialogue;
+    public GameObject Nil;
+    public GameObject mainDialogue;
 
     void Start(){
         mgr = FindObjectOfType<DialogueManager>();
@@ -56,8 +61,7 @@ public class Piano : MonoBehaviour
             f.GetComponent<Text>().text = "Press F";
             b.GetComponent<Text>().text = "Press B";
             buttonsActive = true;
-        }
-        
+        }   
     }
 
     public void PuzzleFailed(){
@@ -111,11 +115,18 @@ public class Piano : MonoBehaviour
         }
         else{
             RightChoice();
-            gameObject.transform.parent.GetChild(4).GetComponent<DialogueTrigger>().startDialogue();
+            //gameObject.transform.parent.GetChild(4).GetComponent<DialogueTrigger>().startDialogue();
             Destroy(gameObject.transform.parent.GetChild(3).gameObject);
             Destroy(gameObject.transform.parent.GetChild(4).gameObject);
-            Destroy(GameObject.Find("NilIntro"));
             GameObject.Find("MainDoor").GetComponent<DialogueZoneActive>().enabled = true;
+            if (gameObject.transform.parent.name == "Piano"){
+                Destroy(GameObject.Find("IntialDoor").transform.GetChild(0).gameObject);
+                HouseIntro.pianoSolved = true;
+            }
+            if (gameObject.transform.parent.name == "Piano2"){
+                Destroy(GameObject.Find("SecretWall"));
+                gameObject.transform.parent.GetChild(4).GetComponent<DialogueTrigger>().startDialogue();
+            }
         }
     }
 
@@ -165,9 +176,10 @@ public class Piano : MonoBehaviour
 
         decisionMade = false;
         buttonsActive = false;
+        solved = true;
 
         //open the door block the player in and block off the maindoor from exit
-        Destroy(openDoor);
+        //Destroy(openDoor);
         GameObject.Find("MainDoor").GetComponent<CompositeCollider2D>().isTrigger = false;
     }
 }

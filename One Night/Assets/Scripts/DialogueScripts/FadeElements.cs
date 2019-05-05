@@ -15,7 +15,7 @@ public class FadeElements : MonoBehaviour
     public IEnumerator FadeOut(){
         CanvasGroup UI = GetComponentInParent<CanvasGroup>();
         while (UI.alpha > 0f){
-            UI.alpha -= Time.deltaTime / 2f;
+            UI.alpha -= Time.deltaTime / 1f;
             yield return null;
         }
         //UI.interactable = false;
@@ -27,7 +27,7 @@ public class FadeElements : MonoBehaviour
         CanvasGroup UI = GetComponentInParent<CanvasGroup>();
         while (UI.alpha != 1f)
         {
-            UI.alpha += Time.deltaTime / 2f;
+            UI.alpha += Time.deltaTime / 1f;
             yield return null;
         }
         //UI.interactable = false;

@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueStarted = false;
     public bool lastSentence = false;
     public GameObject player;
+    public GameObject pause;
 
     private void Start(){
         sentences = new Queue<string>();
@@ -20,7 +21,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void Update(){
-        if (SceneManager.GetActiveScene().name != "About"){
+        if (gameObject.transform.parent.gameObject.name != "Opening" && SceneManager.GetActiveScene().name != "About"){
             if (dialogueStarted){
                 GetComponent<FadeElements>().Fade_In();
             }
