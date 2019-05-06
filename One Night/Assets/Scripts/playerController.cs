@@ -26,6 +26,7 @@ public class playerController : MonoBehaviour
     private bool playerDestroyed;
     private bool firstLoad;
     public Vector3 firstLoadLoc;
+    GameObject menu;
 
     // Start is called before the first frame update
     void Start()
@@ -36,11 +37,17 @@ public class playerController : MonoBehaviour
 			canRun = true;
 			currStamina = stamina;
             playerLoc = transform.position;
+            menu = GameObject.Find("Pause");
     }
 
     // Update is called once per frame
     void Update()
     {
+            // pause menu
+            if (Input.GetKey(KeyCode.Escape)){
+                    Time.timeScale = 0f;
+            }
+
 			Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 			moveVelocity = moveInput.normalized * walkSpeed;
 		

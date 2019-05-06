@@ -78,6 +78,7 @@ public class OutsideDoor : MonoBehaviour
     public void ObtainedGardenKey(){
         GameObject door = GameObject.Find("GardenDoor");
         Destroy(door.transform.GetChild(0).gameObject);
+        
     }
 
     public void ObtainedHouseKey(){

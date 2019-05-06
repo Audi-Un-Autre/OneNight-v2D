@@ -25,7 +25,7 @@ public class Well : MonoBehaviour
             no.SetActive(true);
             selection.SetActive(true);
             selection.GetComponent<Button>().Select();
-            yes.GetComponent<Text>().text = "Put your hand in the bucket.";
+            yes.GetComponent<Text>().text = "Grab the KEY.";
             no.GetComponent<Text>().text = "What the hell, NO.";
             buttonsActive = true;
         }

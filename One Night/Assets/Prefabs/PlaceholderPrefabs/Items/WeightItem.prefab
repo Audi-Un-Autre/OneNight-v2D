@@ -110,8 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2b53027e8ffb741a16413b72b650eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 50
+  weight: 20
   MasterPlate: {fileID: 0}
+  currPlate: {fileID: 0}
 --- !u!114 &2773356771229402804
 MonoBehaviour:
   m_ObjectHideFlags: 0
