@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     public bool lastSentence = false;
     public GameObject player;
     public GameObject pause;
+    public Canvas canvas;
 
     private void Start(){
         sentences = new Queue<string>();
@@ -22,12 +23,10 @@ public class DialogueManager : MonoBehaviour
 
     private void Update(){
         if (gameObject.transform.parent.gameObject.name != "Opening" && SceneManager.GetActiveScene().name != "About" && SceneManager.GetActiveScene().name != "Ending1" && SceneManager.GetActiveScene().name != "Ending2"){
-            if (dialogueStarted){
-                GetComponent<FadeElements>().Fade_In();
-            }
-            if (!dialogueStarted){
-                GetComponent<FadeElements>().Fade_Out();
-            }
+            if (dialogueStarted)
+                canvas.GetComponent<CanvasGroup>().alpha = 1;
+            if (!dialogueStarted)
+                canvas.GetComponent<CanvasGroup>().alpha = 0;
         }
         if (sentences.Count == 0 && dialogueStarted)
             lastSentence = true;

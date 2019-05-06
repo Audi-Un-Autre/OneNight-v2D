@@ -13,6 +13,7 @@ public class StoveDoor : MonoBehaviour
     public bool gotKey = false;
     bool bookRead;
     bool initialized;
+    bool succeed = false;
 
     void Start()
     {
@@ -30,6 +31,11 @@ public class StoveDoor : MonoBehaviour
             yes.GetComponent<Text>().text = "Reach under the oven.";
             no.GetComponent<Text>().text = "Not right now.";
             buttonsActive = true;
+        }
+
+        if (decisionMade && !succeed){
+            gameObject.transform.parent.Find("Solved").GetComponent<DialogueTrigger>().startDialogue();
+            succeed = true;
         }
     }
 

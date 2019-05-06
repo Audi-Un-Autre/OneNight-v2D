@@ -11,6 +11,7 @@ public class FirePlacePuzzle : MonoBehaviour
     public bool buttonsActive = false;
     public bool decisionMade = false;
     public bool gotKey = false;
+    public bool succeed = false;
 
     void Start(){
         mgr = FindObjectOfType<DialogueManager>();
@@ -28,6 +29,11 @@ public class FirePlacePuzzle : MonoBehaviour
             yes.GetComponent<Text>().text = "Yes.";
             no.GetComponent<Text>().text = "No!";
             buttonsActive = true;
+        }
+
+        if (decisionMade && !succeed){
+            gameObject.transform.parent.Find("ReachSuceed").GetComponent<DialogueTrigger>().startDialogue();
+            succeed = true;
         }
     }
 
@@ -49,6 +55,7 @@ public class FirePlacePuzzle : MonoBehaviour
 
         buttonsActive = false;
         decisionMade = true;
+
     }
 
     public void No()

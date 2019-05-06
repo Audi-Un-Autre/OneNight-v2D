@@ -54,8 +54,10 @@ public class GlobalDatas : MonoBehaviour
                 }
 
                 // book already solved
-                if (book.transform.GetChild(0).name == "ReadBook")
+                if (book.transform.GetChild(0).name == "ReadBook"){
                     Destroy(book.transform.GetChild(0).gameObject);
+                    Destroy(book.transform.Find("Canvas").gameObject);
+                }
 
                 // boat door already solved
                 if (boatDoor.transform.GetChild(0).name == "Locked")
@@ -84,8 +86,10 @@ public class GlobalDatas : MonoBehaviour
             if (boatPuzzlesDone){
 
                 // book already solved
-                if (book2.transform.GetChild(0).name == "ReadBook")
+                if (book2.transform.GetChild(0).name == "ReadBook"){
                     Destroy(book2.transform.GetChild(0).gameObject);
+                    Destroy(book2.transform.Find("Canvas").gameObject);
+                }
 
                 // fireplace solved
                 if (fireplace.transform.GetChild(0).name == "Initial")
@@ -101,8 +105,10 @@ public class GlobalDatas : MonoBehaviour
 
             if (gardenPuzzleDone){
                 // book already read
-                if (book3.transform.GetChild(0).name == "ReadBook")
+                if (book3.transform.GetChild(0).name == "ReadBook"){
                     Destroy(book3.transform.GetChild(0).gameObject);
+                    Destroy(book3.transform.Find("Canvas").gameObject);
+                }
 
                 // stove already solved
                 if (stove.transform.GetChild(0).name == "Unsolved"){

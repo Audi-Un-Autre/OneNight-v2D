@@ -15,13 +15,17 @@ public class DiaryPageCollision : MonoBehaviour
 
     void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         if(isRead && Input.GetKeyDown(KeyCode.E))
         {
             player.GetComponent<playerController>().speed = 3;
-            Destroy (gameObject);
+            //Destroy (gameObject);
+            //Destroy(canvas);
+            canvas.SetActive(false);
         }
     }
 
+    /*
     void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag ("Player"))
@@ -33,4 +37,11 @@ public class DiaryPageCollision : MonoBehaviour
             isRead = true;
         }
 	}
+    */
+
+    public void OpenPage(){
+        canvas.SetActive(true);
+        player.GetComponent<playerController>().speed = 0;
+        isRead = true;
+    }
 }

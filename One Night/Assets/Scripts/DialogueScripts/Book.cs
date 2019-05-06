@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Book : MonoBehaviour
 {
     public GameObject yes, no, selection;
+    public Canvas canvas;
     public DialogueZoneActive active;
     public DialogueManager mgr;
     public bool buttonsActive = false;

@@ -11,6 +11,7 @@ public class Well : MonoBehaviour
     public bool buttonsActive = false;
     public bool decisionMade = false;
     public bool gotKey = false;
+    public bool succeed = false;
 
     void Start(){
         mgr = FindObjectOfType<DialogueManager>();
@@ -29,6 +30,11 @@ public class Well : MonoBehaviour
             no.GetComponent<Text>().text = "What the hell, NO.";
             buttonsActive = true;
         }
+
+        if (decisionMade && !succeed){
+            gameObject.transform.parent.Find("SolvedWell").GetComponent<DialogueTrigger>().startDialogue();
+            succeed = true;
+        }
     }
 
     public void Yes(){
@@ -46,6 +52,7 @@ public class Well : MonoBehaviour
 
         buttonsActive = false;
         decisionMade = true;
+
     }
 
     public void No(){

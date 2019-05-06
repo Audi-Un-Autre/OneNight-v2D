@@ -10,6 +10,7 @@ public class ChairWeight : MonoBehaviour
     public DialogueZoneActive active;
     public bool buttonsActive = false;
     public bool decisionMade = false;
+    public bool succeed = false;
 
     void Start(){
         mgr = FindObjectOfType<DialogueManager>();
@@ -31,6 +32,11 @@ public class ChairWeight : MonoBehaviour
             no.GetComponent<Text>().text = "No.";
             buttonsActive = true;
         }
+
+        if (decisionMade && !succeed){
+            gameObject.transform.parent.Find("Obtained").GetComponent<DialogueTrigger>().startDialogue();
+            succeed = true;
+        }
     }
 
     public void Yes()
@@ -51,6 +57,7 @@ public class ChairWeight : MonoBehaviour
 
         buttonsActive = false;
         decisionMade = true;
+
     }
 
     public void No()

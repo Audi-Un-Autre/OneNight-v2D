@@ -2481,8 +2481,25 @@ PrefabInstance:
         type: 3}
       propertyPath: diaryPage
       value: 
-      objectReference: {fileID: 11400000, guid: 9d5be21504ad9cd4cadd4db84b775ecd,
+      objectReference: {fileID: 11400000, guid: 44b574b58737523478a074677c41d48d,
         type: 2}
+    - target: {fileID: 4868196200209235900, guid: 6842cfafecd8a3a4689656db8a6e67e4,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6808390dfdf86d14882005c30bd0273f,
+        type: 3}
+    - target: {fileID: 4868196200209235900, guid: 6842cfafecd8a3a4689656db8a6e67e4,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4868196199934148335, guid: 6842cfafecd8a3a4689656db8a6e67e4,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6808390dfdf86d14882005c30bd0273f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6842cfafecd8a3a4689656db8a6e67e4, type: 3}
 --- !u!1001 &6913750665131508136

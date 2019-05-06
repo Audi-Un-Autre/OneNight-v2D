@@ -11,6 +11,7 @@ public class FoodPuzzle : MonoBehaviour
     public bool buttonsActive = false;
     public bool decisionMade = false;
     public bool SpokeTo;
+    public bool succeed = false;
 
     private void Start()
     {
@@ -30,6 +31,11 @@ public class FoodPuzzle : MonoBehaviour
             yes.GetComponent<Text>().text = "Yes.";
             no.GetComponent<Text>().text = "No!";
             buttonsActive = true;
+        }
+
+        if (decisionMade && !succeed){
+            gameObject.transform.parent.Find("Solved").GetComponent<DialogueTrigger>().startDialogue();
+            succeed = true;
         }
     }
 

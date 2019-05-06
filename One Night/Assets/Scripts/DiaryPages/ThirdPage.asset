@@ -23,5 +23,5 @@ MonoBehaviour:
     to keep hiim at bay. Don''t do anything stupid. Hide if you must! Just stay away
     from him...'
   pageNumber: 3
-  diaryPage: {fileID: 0}
-  diaryScribble: {fileID: 0}
+  diaryPage: {fileID: 21300000, guid: 3208f05457d0fcc4a874da56cd0c63ec, type: 3}
+  diaryScribble: {fileID: 21300000, guid: be8bf0ac606802042b2a2a8855166583, type: 3}
