@@ -72,6 +72,7 @@ public class GardenPuzzle : MonoBehaviour
             player.transform.position = spawnBack.transform.position;
             Destroy(gameObject.transform.parent.GetChild(0).gameObject);
             solved = true;
+            GlobalDatas.forestPuzzleDone = true;
         }
 
         buttonsActive = false;

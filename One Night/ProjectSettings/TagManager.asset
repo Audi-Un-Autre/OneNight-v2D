@@ -11,6 +11,7 @@ TagManager:
   - Item
   - Puzzle
   - MenuMusic
+  - GlobalSett
   layers:
   - Default
   - TransparentFX

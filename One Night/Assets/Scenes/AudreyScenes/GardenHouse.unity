@@ -1975,6 +1975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a025f2fc0c027459955fe1269ae8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  falsePause: 0
 --- !u!4 &176661794
 Transform:
   m_ObjectHideFlags: 0
@@ -5809,7 +5810,7 @@ PrefabInstance:
     - target: {fileID: 5533178446732551373, guid: f4523b07916a7c94c8f31b16ba51d205,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5533178446732551368, guid: f4523b07916a7c94c8f31b16ba51d205,
         type: 3}
@@ -7707,6 +7708,7 @@ MonoBehaviour:
   dialogueStarted: 0
   lastSentence: 0
   player: {fileID: 0}
+  pause: {fileID: 0}
 --- !u!1 &1127016715
 GameObject:
   m_ObjectHideFlags: 0

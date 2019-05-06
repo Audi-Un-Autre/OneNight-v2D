@@ -46,6 +46,8 @@ public class StoveDoor : MonoBehaviour
         if (gameObject.transform.parent.GetChild(0).gameObject.name == "Ready")
             Destroy(gameObject.transform.parent.GetChild(0).gameObject);
 
+        GlobalDatas.gardenPuzzleDone = true;
+
         buttonsActive = false;
         decisionMade = true;
     }

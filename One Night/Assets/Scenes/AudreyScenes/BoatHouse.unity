@@ -2538,7 +2538,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 370459226}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &354747571
 MonoBehaviour:
@@ -2556,9 +2556,7 @@ MonoBehaviour:
     sentences:
     - '(A NOTE drops and you pick it up along with a KEY)
 
-      "The lady in the portrait."
-
-      Huh . . .'
+      "The lady in the GARDEN. Look for her."'
     name: Rick
 --- !u!1 &361421906
 GameObject:
@@ -2729,7 +2727,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1526729432}
-  - {fileID: 1590009503}
   - {fileID: 354747570}
   - {fileID: 2003399388}
   m_Father: {fileID: 1186510093}
@@ -6091,6 +6088,7 @@ MonoBehaviour:
   dialogueStarted: 0
   lastSentence: 0
   player: {fileID: 0}
+  pause: {fileID: 0}
 --- !u!1 &1283375996
 GameObject:
   m_ObjectHideFlags: 0
@@ -7707,7 +7705,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1473893390}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2003399389}
+        m_MethodName: No
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1473893390
@@ -8012,60 +8021,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565493244}
   m_CullTransparentMesh: 0
---- !u!1 &1590009502
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1590009503}
-  - component: {fileID: 1590009504}
-  m_Layer: 0
-  m_Name: ReachFail
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1590009503
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590009502}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 370459226}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1590009504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590009502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 635a62f2131d06941b8ef6344aeaa514, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - 'OH GOD !
-
-      I''M BLEEDING !
-
-'
-    - (You look down to see your hand has been sliced freshly off and in the fireplace
-      your freshly chopped hand lays amongst the ashes. Slowly everything turns to
-      black . . .)
-    name: Rick
 --- !u!1 &1616082321
 GameObject:
   m_ObjectHideFlags: 0
@@ -8124,7 +8079,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1616082323}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2003399389}
+        m_MethodName: Yes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1616082323
@@ -9250,7 +9216,7 @@ GameObject:
   - component: {fileID: 2003399389}
   m_Layer: 0
   m_Name: FireplaceScript
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9267,7 +9233,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 370459226}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2003399389
 MonoBehaviour:
@@ -9281,6 +9247,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d15f8626d64a640499c0a0f3b9e6a543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yes: {fileID: 1616082321}
+  no: {fileID: 1473893388}
+  selection: {fileID: 2077350694}
+  active: {fileID: 0}
+  mgr: {fileID: 0}
+  buttonsActive: 0
+  decisionMade: 0
+  gotKey: 0
 --- !u!1 &2035305968
 GameObject:
   m_ObjectHideFlags: 0
@@ -9310,6 +9284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a025f2fc0c027459955fe1269ae8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  falsePause: 0
 --- !u!4 &2035305970
 Transform:
   m_ObjectHideFlags: 0

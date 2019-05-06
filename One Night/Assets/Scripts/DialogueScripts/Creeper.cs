@@ -64,6 +64,7 @@ public class Creeper : MonoBehaviour
         Destroy(door2.transform.GetChild(0).gameObject);
 
         ending = 1;
+        gameObject.transform.parent.gameObject.SetActive(false);
     }
 
     public void No()
@@ -83,5 +84,6 @@ public class Creeper : MonoBehaviour
         Destroy(door2.transform.GetChild(0).gameObject);
 
         ending = 2;
+        gameObject.transform.parent.gameObject.SetActive(false);
     }
 }
