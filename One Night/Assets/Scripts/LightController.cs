@@ -13,6 +13,7 @@ public class LightController : MonoBehaviour
     private Light lightComp;
     public float intensityModifier;
     public GameObject player;
+    private AudioSource audio;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class LightController : MonoBehaviour
         batteryLeft = maxLight;
         lightComp = light.GetComponent<Light>();
         player = transform.root.gameObject;
+        audio = GetComponent<AudioSource>();
     }
 
     public void RefreshLight()
@@ -38,6 +40,7 @@ public class LightController : MonoBehaviour
         if(Input.GetMouseButtonDown(1) && batteryLeft > 0)
         {
             light.SetActive(isOn = !isOn);
+            PlayAudioNow();
         }
 
         //Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -56,6 +59,10 @@ public class LightController : MonoBehaviour
         lightComp.intensity = batteryLeft/maxLight * intensityModifier;
 
         //Debug.Log("Battery Left: " + batteryLeft);
+    }
+    void PlayAudioNow()
+    {
+        audio.Play(0);
     }
  
 }

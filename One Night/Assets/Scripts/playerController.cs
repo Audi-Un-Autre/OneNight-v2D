@@ -51,7 +51,7 @@ public class playerController : MonoBehaviour
 			Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 			moveVelocity = moveInput.normalized * walkSpeed;
 		
-			//Debug.Log("Stamina Left: " + currStamina);
+			Debug.Log("Stamina Left: " + currStamina);
 
 			if(currStamina <= 0)
 			{

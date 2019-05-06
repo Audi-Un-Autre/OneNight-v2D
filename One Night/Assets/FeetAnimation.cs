@@ -9,12 +9,14 @@ public class FeetAnimation : MonoBehaviour
     public GameObject player;
     public playerController controller;
     public float animSpeed;
+    private AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
         player = transform.root.gameObject;
         anim = GetComponent<Animator>();
         controller = player.GetComponent<playerController>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,4 +36,10 @@ public class FeetAnimation : MonoBehaviour
             anim.SetFloat("speed", (animSpeed * 2));
         }
     }
+
+    void PlayAudioNow()
+    {
+        audio.Play(0);
+    }
+
 }
