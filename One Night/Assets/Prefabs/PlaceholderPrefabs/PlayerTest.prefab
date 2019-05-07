@@ -41,10 +41,10 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 0
-  m_Color: {r: 1, g: 0.97083807, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.7741268, b: 0, a: 1}
   m_Intensity: 40
-  m_Range: 20
-  m_SpotAngle: 76
+  m_Range: 50
+  m_SpotAngle: 75
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -1033,7 +1033,7 @@ MonoBehaviour:
   offset: 0
   light: {fileID: 46465621}
   maxLight: 100
-  batterDrainRate: 2
+  batterDrainRate: 1
   intensityModifier: 50
   player: {fileID: 5533178446732551373}
 --- !u!82 &908920374849807651
@@ -1736,10 +1736,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7961f776a20d246be9e48f7f4f7df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   walkSpeed: 0
   moveVelocity: {x: 0, y: 0}
-  stamina: 50
+  stamina: 20
   recoverStam: 5
   testDoor: 0
   previousRoom: 

@@ -8,6 +8,8 @@ public class playerController : MonoBehaviour
 	public float speed;
 	public float walkSpeed;
 
+    public float health;
+
 	private Rigidbody2D rb;
 	public Vector2 moveVelocity;
 	private Vector2 lastPos;
@@ -31,6 +33,7 @@ public class playerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+            health = 100f;
 			rb = GetComponent<Rigidbody2D>();
 			lastPos = transform.position;
 			walkSpeed = speed;
@@ -43,6 +46,11 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (health <= 0f){
+            SceneManager.LoadScene("DeathMenu");
+        }
+
             // pause menu
             if (Input.GetKey(KeyCode.Escape)){
                     Time.timeScale = 0f;

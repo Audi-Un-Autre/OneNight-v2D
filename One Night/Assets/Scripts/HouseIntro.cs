@@ -15,6 +15,8 @@ public class HouseIntro : MonoBehaviour
     public float waitMax = 3f;
     public bool started;
 
+    public GameObject startNil;
+
     void Start(){
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -43,16 +45,8 @@ public class HouseIntro : MonoBehaviour
             openerDialogue.gameObject.GetComponent<DialogueBegin>().falsePause = true;
             Time.timeScale = 0f;
             player.transform.position = GameObject.Find("CaptureRoom").gameObject.transform.position;
+            startNil.SetActive(true);
             Destroy(gameObject);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision){
-        // dialogue
-        // scene goes to black
-        // remove intro doors
-        // block off main door
-        // place player into 
-        // destroy this script
     }
 }

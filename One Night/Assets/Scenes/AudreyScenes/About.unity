@@ -564,7 +564,10 @@ MonoBehaviour:
     - "/// W, A, S, D to move.\n\n/// E to interact. \n\n/// Right click to toggle
       flashlight."
     - Thank you, Rick. I'll remember that as you tell me the story.
-    - "Oh, something else ?\n\n/// Puzzles and traps. \n/// Be wary."
+    - 'Oh, something else ?
+
+
+      /// If you see him ... LOOK AWAY or DIE.'
     - 'How odd, but thank you.
 
       I''m ready now.
@@ -587,6 +590,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16c6112b3238af4a941561e590e8157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  falsePause: 0
+  start: {fileID: 0}
+  quit: {fileID: 0}
+  falseContinue: {fileID: 0}
+  pause: {fileID: 0}
+  opening: {fileID: 0}
+  title: {fileID: 0}
+  mainDialogue: {fileID: 0}
 --- !u!1 &404763290
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +985,8 @@ MonoBehaviour:
   dialogueStarted: 0
   lastSentence: 0
   player: {fileID: 0}
+  pause: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!1 &1579706945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,6 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a025f2fc0c027459955fe1269ae8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  falsePause: 0
 --- !u!4 &1692720758
 Transform:
   m_ObjectHideFlags: 0
