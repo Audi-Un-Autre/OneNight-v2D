@@ -46,7 +46,7 @@ public class NilFollow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision){
         if (collision.transform.tag == "Player"){
-            player.GetComponent<playerController>().health -= 10f;
+            player.GetComponent<playerController>().health -= 5f;
         }
     }
 }
