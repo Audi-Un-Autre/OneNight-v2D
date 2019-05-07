@@ -1738,9 +1738,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   walkSpeed: 0
+  health: 100
   moveVelocity: {x: 0, y: 0}
   stamina: 20
+  isHiding: 0
   recoverStam: 5
+  recoverHealth: 5
   testDoor: 0
   previousRoom: 
   currentRoom: 

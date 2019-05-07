@@ -17,7 +17,9 @@ public class playerController : MonoBehaviour
 	public float stamina;
 	private float currStamina;
 	private bool canRun;
+    public bool isHiding;
 	public float recoverStam;
+    public float recoverHealth;
 
     public bool testDoor;
     public string previousRoom;
@@ -29,6 +31,7 @@ public class playerController : MonoBehaviour
     private bool firstLoad;
     public Vector3 firstLoadLoc;
     GameObject menu;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,7 @@ public class playerController : MonoBehaviour
 			lastPos = transform.position;
 			walkSpeed = speed;
 			canRun = true;
+            isHiding = false;
 			currStamina = stamina;
             playerLoc = transform.position;
             menu = GameObject.Find("Pause");
@@ -49,6 +53,10 @@ public class playerController : MonoBehaviour
 
         if (health <= 0f){
             SceneManager.LoadScene("DeathMenu");
+        }
+        if(isHiding && health < 100f)
+        {
+            health += recoverHealth * Time.fixedDeltaTime;
         }
 
             // pause menu
@@ -80,15 +88,18 @@ public class playerController : MonoBehaviour
 				currStamina += recoverStam * Time.fixedDeltaTime;
 			}
 
-			if(Input.GetKey(KeyCode.LeftShift) && canRun)
-			{
-				walkSpeed = speed * 2f;
-				currStamina -= Vector2.Distance(transform.position, lastPos);
-			}
-			else
-			{
-				walkSpeed = speed;
-			}
+            if(!isHiding)
+            {
+                if(Input.GetKey(KeyCode.LeftShift) && canRun)
+                {
+                    walkSpeed = speed * 2f;
+                    currStamina -= Vector2.Distance(transform.position, lastPos);
+                }
+                else
+                {
+                    walkSpeed = speed;
+                }
+            }
 
 			lastPos = transform.position;
 			rb.MovePosition (rb.position + moveVelocity * Time.fixedDeltaTime);
