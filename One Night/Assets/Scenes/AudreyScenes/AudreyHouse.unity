@@ -29147,7 +29147,7 @@ CompositeCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.97}
+  m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
@@ -29216,36 +29216,36 @@ CompositeCollider2D:
         Y: -30000000
   m_CompositePaths:
     m_Paths:
-    - - {x: -7.0625, y: 15.53}
-      - {x: -7.0625, y: 17.03}
-      - {x: -7.0312495, y: 17.03}
-      - {x: -7, y: 17.06125}
-      - {x: -7, y: 17.53}
-      - {x: -7.0625, y: 17.5925}
-      - {x: -8.9375, y: 17.5925}
-      - {x: -9, y: 17.53}
-      - {x: -9, y: 17.06125}
-      - {x: -8.968751, y: 17.03}
-      - {x: -8.9375, y: 17.03}
-      - {x: -8.9375, y: 15.53}
-      - {x: -8.875, y: 15.467502}
-      - {x: -7.125, y: 15.467502}
-    - - {x: 20, y: 10.03}
-      - {x: 19, y: 10.03}
-      - {x: 19, y: 8.03}
-      - {x: 20, y: 8.03}
-    - - {x: -1, y: 6.0299997}
-      - {x: -2, y: 6.0299997}
-      - {x: -2, y: 4.0299997}
-      - {x: -1, y: 4.0299997}
-    - - {x: -7, y: 4.0299997}
-      - {x: -8, y: 4.0299997}
-      - {x: -8, y: 2.03}
-      - {x: -7, y: 2.03}
-    - - {x: 11, y: -1.97}
-      - {x: 10, y: -1.97}
-      - {x: 10, y: -3.97}
-      - {x: 11, y: -3.97}
+    - - {x: -7.0625, y: 16.5}
+      - {x: -7.0625, y: 18}
+      - {x: -7.0312495, y: 18}
+      - {x: -7, y: 18.03125}
+      - {x: -7, y: 18.5}
+      - {x: -7.0625, y: 18.5625}
+      - {x: -8.9375, y: 18.5625}
+      - {x: -9, y: 18.5}
+      - {x: -9, y: 18.03125}
+      - {x: -8.968751, y: 18}
+      - {x: -8.9375, y: 18}
+      - {x: -8.9375, y: 16.5}
+      - {x: -8.875, y: 16.437502}
+      - {x: -7.125, y: 16.437502}
+    - - {x: 20, y: 11}
+      - {x: 19, y: 11}
+      - {x: 19, y: 9}
+      - {x: 20, y: 9}
+    - - {x: -1, y: 7}
+      - {x: -2, y: 7}
+      - {x: -2, y: 5}
+      - {x: -1, y: 5}
+    - - {x: -7, y: 5}
+      - {x: -8, y: 5}
+      - {x: -8, y: 3}
+      - {x: -7, y: 3}
+    - - {x: 11, y: -1}
+      - {x: 10, y: -1}
+      - {x: 10, y: -3}
+      - {x: 11, y: -3}
   m_VertexDistance: 0.0005
 --- !u!50 &1055556984
 Rigidbody2D:
@@ -29255,7 +29255,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055556981}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -29266,8 +29266,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!19719996 &1055556985
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -29583,6 +29583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  other: {fileID: 0}
 --- !u!1 &1058072889
 GameObject:
   m_ObjectHideFlags: 0

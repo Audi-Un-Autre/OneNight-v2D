@@ -88,15 +88,18 @@ public class playerController : MonoBehaviour
 				currStamina += recoverStam * Time.fixedDeltaTime;
 			}
 
-			if(Input.GetKey(KeyCode.LeftShift) && canRun)
-			{
-				walkSpeed = speed * 2f;
-				currStamina -= Vector2.Distance(transform.position, lastPos);
-			}
-			else
-			{
-				walkSpeed = speed;
-			}
+            if(!isHiding)
+            {
+                if(Input.GetKey(KeyCode.LeftShift) && canRun)
+                {
+                    walkSpeed = speed * 2f;
+                    currStamina -= Vector2.Distance(transform.position, lastPos);
+                }
+                else
+                {
+                    walkSpeed = speed;
+                }
+            }
 
 			lastPos = transform.position;
 			rb.MovePosition (rb.position + moveVelocity * Time.fixedDeltaTime);

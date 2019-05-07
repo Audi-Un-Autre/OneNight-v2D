@@ -6,34 +6,57 @@ public class Hiding : MonoBehaviour
 {
 
     public playerController player;
+    public GameObject other;
+    private bool isTriggered;
 
-    // Start is called before the first frame update
-    void OnTriggerStay2D(Collider2D other)
-	{
-		if (other.CompareTag ("Player") && Input.GetKeyDown(KeyCode.E))
+    void Start()
+    {
+        isTriggered = false;
+        other = null;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.E) && isTriggered)
         {
-            Debug.Log("Player hit E");
-            player = other.GetComponent<playerController>();
-            if(!player.isHiding)
-            {
-                player.isHiding = true;
-                player.walkSpeed = 0f;
-                other.GetComponent<SpriteRenderer>().enabled = false;
-                for (int i = 0; i < other.transform.childCount; i++)
+                player = other.GetComponent<playerController>();
+                if(!player.isHiding)
                 {
-                    other.transform.GetChild(i).gameObject.SetActive(false);
+                    player.isHiding = true;
+                    player.walkSpeed = 0f;
+                    other.GetComponent<SpriteRenderer>().enabled = false;
+                    for (int i = 0; i < other.transform.childCount; i++)
+                    {
+                        other.transform.GetChild(i).gameObject.SetActive(false);
+                    }
                 }
-            }
-            else if(player.isHiding)
-            {
-                player.isHiding = false;
-                player.walkSpeed = player.speed;
-                other.GetComponent<SpriteRenderer>().enabled = true;
-                for (int i = 0; i < other.transform.childCount; i++)
+                else if(player.isHiding)
                 {
-                    other.transform.GetChild(i).gameObject.SetActive(true);
+                    player.isHiding = false;
+                    player.walkSpeed = player.speed;
+                    other.GetComponent<SpriteRenderer>().enabled = true;
+                    for (int i = 0; i < other.transform.childCount; i++)
+                    {
+                        other.transform.GetChild(i).gameObject.SetActive(true);
+                    }
                 }
-            }
+        }
+    }
+    // Start is called before the first frame update
+    void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag ("Player"))
+        {
+            isTriggered = true;
+            this.other = other.gameObject;            
+        }
+    }
+        void OnTriggerExit2D(Collider2D other)
+	{
+		if (other.CompareTag ("Player"))
+        {
+            isTriggered = false;
+            this.other = null;            
         }
     }
 }
