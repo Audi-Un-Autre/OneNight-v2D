@@ -1034,7 +1034,7 @@ MonoBehaviour:
   offset: 0
   light: {fileID: 46465621}
   maxLight: 100
-  batterDrainRate: 1
+  batterDrainRate: 3
   intensityModifier: 50
   player: {fileID: 5533178446732551373}
 --- !u!82 &908920374849807651
