@@ -6140,7 +6140,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6913750664870016263, guid: 34660006d710963408b9bc1ef886a2d4,
+        type: 3}
+      propertyPath: mgr
+      value: 
+      objectReference: {fileID: 1278610641}
+    - target: {fileID: 6913750664870016280, guid: 34660006d710963408b9bc1ef886a2d4,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5134596354538553117, guid: 34660006d710963408b9bc1ef886a2d4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 620469680910663665, guid: 34660006d710963408b9bc1ef886a2d4, type: 3}
+    - {fileID: 8711634682371038205, guid: 34660006d710963408b9bc1ef886a2d4, type: 3}
+    - {fileID: 5134596354538553117, guid: 34660006d710963408b9bc1ef886a2d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34660006d710963408b9bc1ef886a2d4, type: 3}
 --- !u!1 &1186510091
 GameObject:
@@ -9473,6 +9491,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemButton: {fileID: 5828690250002314568, guid: 712cc54796fe34f4c8a7592f8444779c,
     type: 3}
+  started: 0
+  mgr: {fileID: 0}
+  found: 0
 --- !u!1 &1986446521
 GameObject:
   m_ObjectHideFlags: 0
@@ -9567,7 +9588,7 @@ PrefabInstance:
     - target: {fileID: 5533178446732551373, guid: f4523b07916a7c94c8f31b16ba51d205,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5533178446732551368, guid: f4523b07916a7c94c8f31b16ba51d205,
         type: 3}
