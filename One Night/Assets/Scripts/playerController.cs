@@ -65,6 +65,7 @@ public class playerController : MonoBehaviour
             healthbar.color = Color.Lerp(healthbar.color, Color.red, Mathf.PingPong(Time.time, 1));
 
         if (health <= 0f){
+            Destroy(GameObject.Find("GlobalObjects"));
             PlayerSpawn.firstRun = true;
             SceneManager.LoadScene("DeathMenu");
         }
