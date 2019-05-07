@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class playerController : MonoBehaviour
     private bool firstLoad;
     public Vector3 firstLoadLoc;
     GameObject menu;
+
+    float startingHealth;
+    public Image healthbar;
     
 
     // Start is called before the first frame update
@@ -45,11 +49,20 @@ public class playerController : MonoBehaviour
 			currStamina = stamina;
             playerLoc = transform.position;
             menu = GameObject.Find("Pause");
+            startingHealth = health;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        healthbar.fillAmount = health / startingHealth;
+        if (health <= 60 && health > 30){
+            healthbar.color = Color.Lerp(healthbar.color, new Color(255, 154, 0), Mathf.PingPong(Time.time, 1));
+        }
+
+        if (health <= 30)
+            healthbar.color = Color.Lerp(healthbar.color, Color.red, Mathf.PingPong(Time.time, 1));
 
         if (health <= 0f){
             SceneManager.LoadScene("DeathMenu");
