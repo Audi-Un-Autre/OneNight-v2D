@@ -18,11 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MASTER/GardenHouse.unity
     guid: b0fcf916f8e739941af3698429be0407
   - enabled: 1
+    path: Assets/Scenes/AudreyScenes/MainMenu.unity
+    guid: 11246f35b609656438630ce8c4c7c517
+  - enabled: 1
+    path: Assets/Scenes/AudreyScenes/About.unity
+    guid: 18fdfd9e8005a00439d2eb27dad57330
+  - enabled: 1
     path: Assets/Scenes/AudreyScenes/Audrey.unity
     guid: 77c098e012247d54ca1fc73d9eb42bd6
-  - enabled: 1
-    path: Assets/Scenes/AudreyScenes/AudreyHouse.unity
-    guid: 82fbb1bf47e6d2a4a8766b326602a5f1
   - enabled: 1
     path: Assets/Scenes/AudreyScenes/BoatHouse.unity
     guid: b41517cbc4236004aba3a91c66fbc9d7
@@ -30,18 +33,15 @@ EditorBuildSettings:
     path: Assets/Scenes/AudreyScenes/GardenHouse.unity
     guid: 172404ac9185f384c93c2f28cf7a0402
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/DeathMenu.unity
-    guid: fa6799254b51e2e42a5da58665b43da2
-  - enabled: 1
-    path: Assets/Scenes/AudreyScenes/MainMenu.unity
-    guid: 11246f35b609656438630ce8c4c7c517
-  - enabled: 1
-    path: Assets/Scenes/AudreyScenes/About.unity
-    guid: 18fdfd9e8005a00439d2eb27dad57330
+    path: Assets/Scenes/AudreyScenes/AudreyHouse.unity
+    guid: 82fbb1bf47e6d2a4a8766b326602a5f1
   - enabled: 1
     path: Assets/Scenes/AudreyScenes/Ending1.unity
     guid: 305f040ba7e738a42a111ab11b43d24b
   - enabled: 1
     path: Assets/Scenes/AudreyScenes/Ending2.unity
     guid: e64328f7fa8eb0243b82d53c086af55a
+  - enabled: 1
+    path: Assets/Scenes/AudreyScenes/DeathMenu.unity
+    guid: fa6799254b51e2e42a5da58665b43da2
   m_configObjects: {}

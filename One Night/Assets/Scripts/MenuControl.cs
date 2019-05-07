@@ -29,6 +29,7 @@ public class MenuControl : MonoBehaviour
             Time.timeScale = 1f;
             PlayerSpawn.firstRun = true;
         }
+        PlayerSpawn.firstRun = true;
         SceneManager.LoadScene("MainMenu");
     }
 
