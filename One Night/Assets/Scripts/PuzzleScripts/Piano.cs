@@ -121,7 +121,7 @@ public class Piano : MonoBehaviour
             GameObject.Find("MainDoor").GetComponent<DialogueZoneActive>().enabled = true;
             if (gameObject.transform.parent.name == "Piano"){
                 Destroy(GameObject.Find("IntialDoor").transform.GetChild(0).gameObject);
-                HouseIntro.pianoSolved = true;
+                HouseIntro.pianoSolved = true; // GLOBAL
             }
             if (gameObject.transform.parent.name == "Piano2"){
                 Destroy(GameObject.Find("SecretWall"));

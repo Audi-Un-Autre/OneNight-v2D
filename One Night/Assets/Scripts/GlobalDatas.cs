@@ -28,9 +28,10 @@ public class GlobalDatas : MonoBehaviour
         SceneManager.sceneLoaded -= Check;
     }
 
+
     // TO DO upon scene changes
     private void Check(Scene scene, LoadSceneMode mode){
-        if (SceneManager.GetActiveScene().name == "About" || SceneManager.GetActiveScene().name == "Ending1" || SceneManager.GetActiveScene().name == "Ending2" || SceneManager.GetActiveScene().name == "MainMenu")
+        if (SceneManager.GetActiveScene().name == "About" || SceneManager.GetActiveScene().name == "Ending1" || SceneManager.GetActiveScene().name == "Ending2" || SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "DeathMenu")
             Destroy(gameObject);
 
         // if all things in forest has been solved, mark all objects complete and maintain persistence between scenes

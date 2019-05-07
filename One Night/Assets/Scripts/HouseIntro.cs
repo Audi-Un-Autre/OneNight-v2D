@@ -5,7 +5,7 @@ using UnityEngine;
 public class HouseIntro : MonoBehaviour
 {
     [SerializeField] GameObject player;
-    public static bool pianoSolved;
+    public static bool pianoSolved; // GLOBAL
     public DialogueManager mgr;
     public GameObject opener;
     public GameObject openerDialogue;

@@ -51,14 +51,10 @@ public class UnlockMainDoor : MonoBehaviour
 
         
         if (ending.ending == 1){
-            PlayerSpawn.firstRun = true;
-            Destroy(GameObject.Find("GlobalObjects"));
             SceneManager.LoadScene("Ending1");
         }
 
         else if (ending.ending == 2){
-            PlayerSpawn.firstRun = true;
-            Destroy(GameObject.Find("GlobalObjects"));
             SceneManager.LoadScene("Ending2");
         }
     }

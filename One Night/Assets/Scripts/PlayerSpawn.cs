@@ -19,6 +19,7 @@ public class PlayerSpawn : MonoBehaviour
     [SerializeField] GameObject spawnBoat;
     [SerializeField] GameObject spawnDefault;
 
+
     private void Start(){
         _scene = SceneManager.GetActiveScene();
         cam = GameObject.Find("Main Camera");

@@ -27,14 +27,16 @@ public class MenuControl : MonoBehaviour
     public void Title(){
         if (SceneManager.GetActiveScene().name == "Audrey" || SceneManager.GetActiveScene().name == "AudreyHouse" || SceneManager.GetActiveScene().name == "BoatHouse" || SceneManager.GetActiveScene().name == "GardenHouse"){
             Time.timeScale = 1f;
-            PlayerSpawn.firstRun = true;
         }
-        Destroy(GameObject.Find("GlobalObjects"));
-        PlayerSpawn.firstRun = true;
         SceneManager.LoadScene("MainMenu");
     }
 
     public void NewGame(){
+        PlayerSpawn.firstRun = true;
+        HouseIntro.pianoSolved = false;
+        GlobalDatas.forestPuzzleDone = false;
+        GlobalDatas.gardenPuzzleDone = false;
+        GlobalDatas.boatPuzzlesDone = false;
         SceneManager.LoadScene("About");
     }
 

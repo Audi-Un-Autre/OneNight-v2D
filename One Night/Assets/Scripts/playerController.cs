@@ -56,6 +56,10 @@ public class playerController : MonoBehaviour
     void Update()
     {
 
+        if (SceneManager.GetActiveScene().name == "MainMenu" || SceneManager.GetActiveScene().name == "About" || SceneManager.GetActiveScene().name == "DeathMenu" || SceneManager.GetActiveScene().name == "Ending1" || SceneManager.GetActiveScene().name == "Ending2"){
+            Destroy(gameObject);
+        }
+
         healthbar.fillAmount = health / startingHealth;
         if (health <= 60 && health > 30){
             healthbar.color = Color.Lerp(healthbar.color, new Color(255, 154, 0), Mathf.PingPong(Time.time, 1));
@@ -65,8 +69,8 @@ public class playerController : MonoBehaviour
             healthbar.color = Color.Lerp(healthbar.color, Color.red, Mathf.PingPong(Time.time, 1));
 
         if (health <= 0f){
-            Destroy(GameObject.Find("GlobalObjects"));
-            PlayerSpawn.firstRun = true;
+            //Destroy(GameObject.Find("GlobalObjects"));
+            //PlayerSpawn.firstRun = true;
             SceneManager.LoadScene("DeathMenu");
         }
         if(isHiding && health < 100f)
