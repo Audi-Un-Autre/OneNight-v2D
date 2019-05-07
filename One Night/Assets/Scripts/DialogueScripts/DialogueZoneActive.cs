@@ -25,7 +25,7 @@ public class DialogueZoneActive : MonoBehaviour
             gameObject.GetComponentInChildren<DialogueTrigger>().startDialogue();
             dialougeStarted = true;
         }
-        else if (colliding && Input.GetKeyDown(KeyCode.E) && dialougeStarted){
+        else if (Input.GetKeyDown(KeyCode.E) && dialougeStarted){
             // subsuequent dialogues & unfreeze player when done
             if (mgr.DisplayNext() == true){
             }
