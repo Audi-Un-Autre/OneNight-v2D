@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
@@ -31,11 +30,6 @@ public class playerController : MonoBehaviour
     public Vector3 firstLoadLoc;
     GameObject menu;
 
-    [Header("Unity Stuff")]
-    public Image healthbar;
-
-    public float startHealth;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -47,16 +41,11 @@ public class playerController : MonoBehaviour
 			currStamina = stamina;
             playerLoc = transform.position;
             menu = GameObject.Find("Pause");
-            startHealth = health;
-            
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        healthbar.fillAmount = health / startHealth;
-       
 
         if (health <= 0f){
             SceneManager.LoadScene("DeathMenu");
