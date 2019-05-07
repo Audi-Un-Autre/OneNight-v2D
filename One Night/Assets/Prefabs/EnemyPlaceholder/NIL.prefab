@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6590823601018412408}
   - component: {fileID: 4003442178966946057}
   - component: {fileID: 6406639482027512056}
+  - component: {fileID: 2375455820201188932}
   m_Layer: 0
   m_Name: NIL
   m_TagString: Untagged
@@ -94,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265c857a0fb8c754eb9768f10d9fc149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  found: 0
 --- !u!82 &4003442178966946057
 AudioSource:
   m_ObjectHideFlags: 0
@@ -101,7 +103,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6250522090762702672}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3e14e89570526cc419c1b1bca1bcfb2e, type: 3}
@@ -197,12 +199,33 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6250522090762702672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.06, y: 0}
   serializedVersion: 2
   m_Radius: 0.13
+--- !u!50 &2375455820201188932
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6250522090762702672}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

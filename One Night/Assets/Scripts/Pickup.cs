@@ -7,14 +7,23 @@ public class Pickup : MonoBehaviour
 
 	private Inventory inventory;
 	public GameObject itemButton;
+    public bool started;
+    public DialogueManager mgr;
+    public bool found;
 
     // Start is called before the first frame update
-    void Start()
-    {
-		inventory = GameObject.FindGameObjectWithTag ("Player").GetComponent<Inventory> ();
+    void Start(){
+		//inventory = GameObject.FindGameObjectWithTag ("Player").GetComponent<Inventory> ();
     }
 
-	void OnTriggerEnter2D(Collider2D other)
+    private void Update(){
+        if (!found){
+            inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+            found = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag ("Player"))
 		{
@@ -25,8 +34,9 @@ public class Pickup : MonoBehaviour
 					//Item can be added to inventory
 					inventory.isFull[i] = true;
 					Instantiate (itemButton, inventory.slots[i].transform, false);
-					gameObject.SetActive(false);
+                    gameObject.SetActive(false);
 					break;
+
 				}
 			}
 		}
