@@ -20645,14 +20645,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 371648759, guid: f4523b07916a7c94c8f31b16ba51d205, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5533178446732551369, guid: f4523b07916a7c94c8f31b16ba51d205,
         type: 3}
       propertyPath: speed
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 371648759, guid: f4523b07916a7c94c8f31b16ba51d205, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 371648755, guid: f4523b07916a7c94c8f31b16ba51d205, type: 3}
       propertyPath: m_IsActive
@@ -39784,7 +39784,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -57004,7 +57004,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.461
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
