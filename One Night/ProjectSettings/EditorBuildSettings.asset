@@ -6,30 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/MainMenu.unity
+    path: Assets/Scenes/FINAL SCENES/MainMenu.unity
     guid: 11246f35b609656438630ce8c4c7c517
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/About.unity
+    path: Assets/Scenes/FINAL SCENES/About.unity
     guid: 18fdfd9e8005a00439d2eb27dad57330
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/Audrey.unity
+    path: Assets/Scenes/FINAL SCENES/Audrey.unity
     guid: 77c098e012247d54ca1fc73d9eb42bd6
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/BoatHouse.unity
+    path: Assets/Scenes/FINAL SCENES/BoatHouse.unity
     guid: b41517cbc4236004aba3a91c66fbc9d7
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/GardenHouse.unity
+    path: Assets/Scenes/FINAL SCENES/GardenHouse.unity
     guid: 172404ac9185f384c93c2f28cf7a0402
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/AudreyHouse.unity
+    path: Assets/Scenes/FINAL SCENES/AudreyHouse.unity
     guid: 82fbb1bf47e6d2a4a8766b326602a5f1
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/Ending1.unity
+    path: Assets/Scenes/FINAL SCENES/Ending1.unity
     guid: 305f040ba7e738a42a111ab11b43d24b
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/Ending2.unity
+    path: Assets/Scenes/FINAL SCENES/Ending2.unity
     guid: e64328f7fa8eb0243b82d53c086af55a
   - enabled: 1
-    path: Assets/Scenes/AudreyScenes/DeathMenu.unity
+    path: Assets/Scenes/FINAL SCENES/DeathMenu.unity
     guid: fa6799254b51e2e42a5da58665b43da2
   m_configObjects: {}
